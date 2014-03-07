@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>_IUPage_Title_</title>
+    <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+</head>
+<script>
+    function IUJSWork(){
+        //IUCTX의 상태와 현재 상태를 맞춰봄
+        //틀리면 IUCTX를 바꿔줌
+        for (variable in variableCTXs){
+            variableCTX = variableCTXs[variable]
+            value = variableCTX['value']
+
+            ruleCTXList = ruleCTXs[variable]
+            for (idx in ruleCTXList){
+                ruleCTX = ruleCTXList[idx]
+
+                fullIUName = ruleCTX['IU']
+                vt = ruleCTX['vt']
+                currentVisible = getIUVisible(fullIUName)
+                evalString = vt + '(' + value + ')'
+                evalValue = eval(evalString)
+                if (currentVisible != evalValue){
+                    currentVisible =! currentVisible
+                    setIUVisible(fullIUName, currentVisible)
+                }
+            }
+        }
+    }
+
+    function positiveVT(param){
+        if (param) return true
+        return false
+    }
+
+    function negativeVT(param){
+        if (param) return false
+        return true
+    }
+
+    function getIUVisible(fullIUName){
+        IUCTX = IUCTXs[fullIUName]
+        if (IUCTX == null){
+            return true
+        }
+        if (IUCTX['visible'] == null){
+            return true
+        }
+        return IUCTX['visible']
+    }
+
+    function setIUVisible(fullIUName, visible){
+        IUCTX = IUCTXs[fullIUName]
+        if (IUCTX == null){
+            IUCTX = {}
+            IUCTXs[fullIUName] = IUCTX
+        }
+        if (visible){
+            $('[iuname =' + fullIUName +']').show()
+            IUCTX['visible'] = true
+        }
+        else{
+            $('[iuname =' + fullIUName +']').hide()
+            IUCTX['visible'] = false
+        }
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        $('[IUClass="IUButton"]').click(function(){
+            fullIUName = $(this).attr('IUName')
+            console.log('IUClicked : ' + fullIUName)
+            eventCTX = eventCTXs[fullIUName]
+            if (eventCTX){
+                if (eventCTX['event'] == 'click'){
+                    variable = eventCTX['variable']
+                    variableCTXs[variable]['value'] ++
+                    if (variableCTXs[variable]['value'] > variableCTXs[variable]['range'])
+                        variableCTXs[variable]['value'] = 0
+                    IUJSWork()
+                }
+            }
+        })
+    })
+</script>
+<script>
+    IUCTXs = {}
+    ruleCTXs = _IURule_CTX_
+    eventCTXs = _IUEvent_CTX_
+    variableCTXs = _IUVariable_CTX_
+    //animationCTXs = _IUAnimation_CTX_
+</script>
+<style>
+<!-_IUTemplate_CSS_-!>
+</style>
+<body>
+<!-_IUTemplate_HTML_-!>
+</body>
+</html>

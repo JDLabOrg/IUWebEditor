@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'Mango' target in the 'Mango' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "JDUtils.h"
+    #import "MGAppController.h"
+#import "MGProjectWC.h"
+#import "IUManager.h"
+#import "MGUtil.h"
+#import "IUFrameManager.h"
+#define  kIUCompiler @"kIUCompiler"
+#define  kMGFileItem @"kMGFileItem"
+#define kIUImageURL @"kIUImageURL"
+
+//#define DefinedIUSortDescriptor [[NSSortDescriptor alloc] initWithKey:@"iuFrame.z" ascending:NO]
+#endif

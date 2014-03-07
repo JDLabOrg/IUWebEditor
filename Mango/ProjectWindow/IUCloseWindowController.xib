@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IUCloseWindowController">
+            <connections>
+                <outlet property="window" destination="ovm-tn-YjK" id="2Lt-Xg-cHX"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Close Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="ovm-tn-YjK">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="359" height="118"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="xDl-iW-Q4w">
+                <rect key="frame" x="0.0" y="0.0" width="359" height="118"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s03-hO-LKv">
+                        <rect key="frame" x="68" y="82" width="273" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Do you want to save the changes you made to" id="cuo-Wf-Q5G">
+                            <font key="font" size="12" name="LucidaGrande"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="laM-Tz-3nz">
+                        <rect key="frame" x="17" y="53" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="rpz-ZZ-5mf"/>
+                            <constraint firstAttribute="width" constant="42" id="t4z-tb-1Nz"/>
+                        </constraints>
+                        <imageCell key="cell" controlSize="mini" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="IUML" id="erm-WT-eEg"/>
+                    </imageView>
+                    <button toolTip="Close window but project will not be saved." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="77N-Ev-Q2y">
+                        <rect key="frame" x="65" y="14" width="82" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="bHH-yo-Kiw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Don't Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f4u-pJ-gfJ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="dontSaveClose:" target="-2" id="QhK-hF-0dd"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Save this project and close the window." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v6D-8D-gMn">
+                        <rect key="frame" x="264" y="14" width="80" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="8wn-k3-RAR"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ybT-QV-KvL">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="saveClose:" target="-2" id="iRi-Qm-pPE"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Cancel to close a project." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8k7-wr-I6w">
+                        <rect key="frame" x="186" y="14" width="80" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="ee3-2u-bWj"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d8D-I6-XQc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelClose:" target="-2" id="UfY-hp-mvB"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ykU-iY-Qx2">
+                        <rect key="frame" x="68" y="58" width="273" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="jRW-TI-7GF">
+                            <font key="font" size="12" name="LucidaGrande-Bold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.name" id="Ruz-hF-Z7J"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8k7-wr-I6w" firstAttribute="centerY" secondItem="77N-Ev-Q2y" secondAttribute="centerY" id="3NN-8Z-gd7"/>
+                    <constraint firstItem="ykU-iY-Qx2" firstAttribute="trailing" secondItem="s03-hO-LKv" secondAttribute="trailing" id="3gV-TQ-xRQ"/>
+                    <constraint firstItem="laM-Tz-3nz" firstAttribute="top" secondItem="xDl-iW-Q4w" secondAttribute="top" constant="20" id="GTD-Zu-nbd"/>
+                    <constraint firstItem="ykU-iY-Qx2" firstAttribute="leading" secondItem="laM-Tz-3nz" secondAttribute="trailing" constant="8" id="LoK-AY-UDE"/>
+                    <constraint firstItem="s03-hO-LKv" firstAttribute="leading" secondItem="laM-Tz-3nz" secondAttribute="trailing" constant="8" id="OFq-fV-DI9"/>
+                    <constraint firstItem="v6D-8D-gMn" firstAttribute="top" secondItem="ykU-iY-Qx2" secondAttribute="bottom" constant="20" id="VzF-Rb-CI3"/>
+                    <constraint firstAttribute="bottom" secondItem="v6D-8D-gMn" secondAttribute="bottom" constant="20" id="aKP-UI-KZv"/>
+                    <constraint firstItem="v6D-8D-gMn" firstAttribute="leading" secondItem="8k7-wr-I6w" secondAttribute="trailing" constant="8" id="dKp-C6-PTq"/>
+                    <constraint firstItem="ykU-iY-Qx2" firstAttribute="top" secondItem="s03-hO-LKv" secondAttribute="bottom" constant="8" id="eNd-UK-K5N"/>
+                    <constraint firstItem="ykU-iY-Qx2" firstAttribute="leading" secondItem="s03-hO-LKv" secondAttribute="leading" id="eTV-rv-CRs"/>
+                    <constraint firstAttribute="trailing" secondItem="s03-hO-LKv" secondAttribute="trailing" constant="20" id="jBB-Zo-LfL"/>
+                    <constraint firstItem="laM-Tz-3nz" firstAttribute="leading" secondItem="xDl-iW-Q4w" secondAttribute="leading" constant="20" id="qd7-iD-efi"/>
+                    <constraint firstAttribute="trailing" secondItem="v6D-8D-gMn" secondAttribute="trailing" constant="20" id="qde-VF-tFa"/>
+                    <constraint firstItem="s03-hO-LKv" firstAttribute="top" secondItem="xDl-iW-Q4w" secondAttribute="top" constant="20" id="r7U-rF-Sd2"/>
+                    <constraint firstItem="8k7-wr-I6w" firstAttribute="centerY" secondItem="v6D-8D-gMn" secondAttribute="centerY" id="wC3-gG-BVE"/>
+                    <constraint firstItem="ykU-iY-Qx2" firstAttribute="leading" secondItem="77N-Ev-Q2y" secondAttribute="leading" id="wTA-cf-Sri"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="Xlb-7z-KAu"/>
+            </connections>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="Lw4-eU-elm"/>
+    </objects>
+    <resources>
+        <image name="IUML" width="62.400001525878906" height="62.400001525878906"/>
+    </resources>
+</document>

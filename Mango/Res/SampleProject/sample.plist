@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Chocolate</string>
+		<key>type</key>
+		<string>IURackProject</string>
+		<key>projectFile</key>
+		<string>bnze.iuproject</string>
+		<key>desc</key>
+		<string>Chocolate is basic project for IU beginner</string>
+		<key>pageSize</key>
+		<string>1024 x 980</string>
+		<key>images</key>
+		<array>
+			<string>chocolate.png</string>
+		</array>
+		<key>feature</key>
+		<string>Responsive
+TransitionImage</string>
+		<key>projectPackageFile</key>
+		<string>chocolate.zip</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>PictureCollection</string>
+		<key>type</key>
+		<string>IUDjangoProject</string>
+		<key>projectFile</key>
+		<string>bnze.iuproject</string>
+		<key>desc</key>
+		<string>Not Yet</string>
+		<key>pageSize</key>
+		<string>1024 x 980</string>
+		<key>images</key>
+		<array>
+			<string>chocolate.png</string>
+		</array>
+		<key>feature</key>
+		<string>Responsive
+TransitionImage</string>
+		<key>projectPackageFile</key>
+		<string>chocolate.zip</string>
+	</dict>
+</array>
+</plist>

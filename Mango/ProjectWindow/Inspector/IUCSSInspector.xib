@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IUCSSInspector">
+            <connections>
+                <outlet property="borderV" destination="3380" id="4690"/>
+                <outlet property="colorV" destination="4459" id="4691"/>
+                <outlet property="shadowV" destination="1884" id="4693"/>
+                <outlet property="tableV" destination="2i9-zi-EF5" id="iwi-PK-xL4"/>
+                <outlet property="view" destination="15g-eV-aq2" id="ij1-oL-Cpw"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="4459" userLabel="color">
+            <rect key="frame" x="0.0" y="0.0" width="278" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4478">
+                    <rect key="frame" x="1" y="43" width="82" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color Gradient" id="4552">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Enable gradeint of background color" translatesAutoresizingMaskIntoConstraints="NO" id="4546">
+                    <rect key="frame" x="83" y="38" width="58" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="Q6J-BM-k7x"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="4547">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.BGGradientEnable" id="FO2-C9-Eo2">
+                            <dictionary key="options">
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="WAj-FL-sCC">
+                    <rect key="frame" x="86" y="14" width="150" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4607">
+                            <rect key="frame" x="-2" y="5" width="30" height="14"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="from" id="4608">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="4593" customClass="MGColorWell">
+                            <rect key="frame" x="29" y="0.0" width="40" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="D3h-bI-oE2"/>
+                                <constraint firstAttribute="height" constant="24" id="bm6-rJ-gOj"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="lDm-VC-Pfp"/>
+                            </constraints>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.BGColor1" id="4684"/>
+                            </connections>
+                        </colorWell>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4614">
+                            <rect key="frame" x="72" y="5" width="18" height="14"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="7Oh-z0-n0w"/>
+                            </constraints>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="to" id="4616">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="4613" customClass="MGColorWell">
+                            <rect key="frame" x="91" y="0.0" width="40" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="4df-rI-IGf"/>
+                                <constraint firstAttribute="width" constant="40" id="JTG-jl-2d7"/>
+                            </constraints>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.BGColor2" id="4685"/>
+                            </connections>
+                        </colorWell>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="4613" secondAttribute="centerY" id="3kf-ys-Rme"/>
+                        <constraint firstItem="4614" firstAttribute="leading" secondItem="4593" secondAttribute="trailing" constant="5" id="B8R-Wd-eO0"/>
+                        <constraint firstItem="4613" firstAttribute="leading" secondItem="4614" secondAttribute="trailing" constant="3" id="Icg-SZ-S8r"/>
+                        <constraint firstAttribute="width" constant="150" id="KH7-He-F4O"/>
+                        <constraint firstAttribute="centerY" secondItem="4607" secondAttribute="centerY" id="hba-zF-wjR"/>
+                        <constraint firstAttribute="centerY" secondItem="4593" secondAttribute="centerY" id="kyH-pL-kHJ"/>
+                        <constraint firstItem="4593" firstAttribute="leading" secondItem="4607" secondAttribute="trailing" constant="3" id="moP-KH-Yww"/>
+                        <constraint firstAttribute="height" constant="24" id="qMF-iC-X92"/>
+                        <constraint firstAttribute="centerY" secondItem="4614" secondAttribute="centerY" id="qt9-O2-EYX"/>
+                        <constraint firstItem="4607" firstAttribute="leading" secondItem="WAj-FL-sCC" secondAttribute="leading" id="vmd-Qr-MfB"/>
+                    </constraints>
+                </customView>
+                <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="tN3-Xg-UQW">
+                    <rect key="frame" x="0.0" y="6" width="278" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4478" firstAttribute="leading" secondItem="4459" secondAttribute="leading" constant="3" id="4z0-PQ-B0r"/>
+                <constraint firstItem="4546" firstAttribute="top" secondItem="4459" secondAttribute="top" constant="8" id="5AR-w1-qlo"/>
+                <constraint firstItem="tN3-Xg-UQW" firstAttribute="top" secondItem="WAj-FL-sCC" secondAttribute="bottom" constant="5" id="5YL-O5-Wy9"/>
+                <constraint firstItem="4546" firstAttribute="leading" secondItem="WAj-FL-sCC" secondAttribute="leading" id="A6G-mV-GXO"/>
+                <constraint firstAttribute="trailing" secondItem="tN3-Xg-UQW" secondAttribute="trailing" id="JvH-lw-rXg"/>
+                <constraint firstItem="4546" firstAttribute="centerY" secondItem="4478" secondAttribute="centerY" id="Tw4-d9-sGE"/>
+                <constraint firstItem="WAj-FL-sCC" firstAttribute="top" secondItem="4546" secondAttribute="bottom" constant="3" id="UZS-hw-V1V"/>
+                <constraint firstItem="4546" firstAttribute="leading" secondItem="4478" secondAttribute="trailing" constant="5" id="Z0i-aV-gVL"/>
+                <constraint firstAttribute="bottom" secondItem="tN3-Xg-UQW" secondAttribute="bottom" constant="8" id="boe-5r-4PG"/>
+                <constraint firstItem="tN3-Xg-UQW" firstAttribute="leading" secondItem="4459" secondAttribute="leading" id="gCp-pi-TfC"/>
+            </constraints>
+        </customView>
+        <customView id="1884" userLabel="shadow">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1970">
+                    <rect key="frame" x="50" y="106" width="33" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="2005">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1973">
+                    <rect key="frame" x="39" y="82" width="44" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vertical" id="2002">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1974">
+                    <rect key="frame" x="23" y="60" width="60" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Horizontal" id="2001">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1979">
+                    <rect key="frame" x="58" y="17" width="25" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Blur" id="1995">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1980">
+                    <rect key="frame" x="42" y="38" width="41" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Spread" id="1994">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider toolTip="Shadow X position to go right." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2170">
+                    <rect key="frame" x="86" y="57" width="127" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" controlSize="small" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="1" sliderType="linear" id="2171"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowHorizontal" id="3271"/>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="qbn-OA-Kcp">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </slider>
+                <slider toolTip="Shadow Y position to go down." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2252">
+                    <rect key="frame" x="86" y="79" width="127" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" controlSize="small" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="1" sliderType="linear" id="2254"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowVertical" id="2938"/>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="tiK-yU-FGW">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </slider>
+                <slider toolTip="Extend shadow size(width, height)." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2188">
+                    <rect key="frame" x="86" y="35" width="127" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" controlSize="small" alignment="left" maxValue="100" doubleValue="4.4228241822429908" tickMarkPosition="above" numberOfTickMarks="1" sliderType="linear" id="2190"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowSpread" id="3277"/>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="XYn-Hu-Z4z">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </slider>
+                <slider toolTip="Blur shadow" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2197">
+                    <rect key="frame" x="86" y="13" width="127" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" controlSize="small" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="1" sliderType="linear" id="2198"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowBlur" id="3283"/>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="9P3-ud-SAe">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </slider>
+                <colorWell toolTip="Shadow Color" translatesAutoresizingMaskIntoConstraints="NO" id="2278" customClass="MGColorWell">
+                    <rect key="frame" x="86" y="102" width="40" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="bju-99-Iu4"/>
+                        <constraint firstAttribute="width" constant="40" id="oPb-RB-MXP"/>
+                    </constraints>
+                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowColor" id="2943"/>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="UI9-Nn-d9G">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </colorWell>
+                <textField toolTip="Shadow Y position to go down." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2426">
+                    <rect key="frame" x="221" y="80" width="35" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="hNY-qg-cun"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2427">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowVertical" id="IdA-ta-uRM">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="ObB-mQ-4pS">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField toolTip="Shadow X position to go right." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2444">
+                    <rect key="frame" x="221" y="58" width="35" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2446">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowHorizontal" id="frk-es-LRK">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="mRO-wo-s3k">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField toolTip="Extend shadow size(width, height)." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2452">
+                    <rect key="frame" x="221" y="36" width="35" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2454">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowSpread" id="f7M-4r-Ag4">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="dro-bZ-HWJ">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField toolTip="Blur shadow" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2462">
+                    <rect key="frame" x="221" y="14" width="35" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2464">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.boxShadowBlur" id="waN-0v-3kb">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableShadow" id="lYY-b8-Zjr">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-Pp-KSV">
+                    <rect key="frame" x="0.0" y="6" width="264" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1980" firstAttribute="trailing" secondItem="1979" secondAttribute="trailing" id="0FQ-Ln-8xq"/>
+                <constraint firstAttribute="trailing" secondItem="2426" secondAttribute="trailing" constant="8" id="0cO-0z-9iG"/>
+                <constraint firstItem="7J7-Pp-KSV" firstAttribute="leading" secondItem="1884" secondAttribute="leading" id="2Yr-06-5CI"/>
+                <constraint firstItem="2426" firstAttribute="leading" secondItem="2252" secondAttribute="trailing" constant="8" id="2w5-tj-KZf"/>
+                <constraint firstItem="2170" firstAttribute="trailing" secondItem="2197" secondAttribute="trailing" id="6WR-Zp-f3K"/>
+                <constraint firstItem="2170" firstAttribute="centerY" secondItem="1974" secondAttribute="centerY" id="7gm-PI-w3D"/>
+                <constraint firstItem="2462" firstAttribute="top" secondItem="2452" secondAttribute="bottom" constant="3" id="7i6-4B-bzZ"/>
+                <constraint firstItem="2252" firstAttribute="leading" secondItem="2278" secondAttribute="leading" id="7ld-TY-Tfl"/>
+                <constraint firstItem="2252" firstAttribute="leading" secondItem="2188" secondAttribute="leading" id="CU1-Y8-g9S"/>
+                <constraint firstItem="2426" firstAttribute="trailing" secondItem="2462" secondAttribute="trailing" id="FBu-1f-nuv"/>
+                <constraint firstItem="2426" firstAttribute="trailing" secondItem="2444" secondAttribute="trailing" id="Fnf-5h-RyR"/>
+                <constraint firstItem="2462" firstAttribute="centerY" secondItem="1979" secondAttribute="centerY" id="H1k-wp-kDP"/>
+                <constraint firstItem="1970" firstAttribute="leading" secondItem="1884" secondAttribute="leading" constant="52" id="J6j-Cs-MTQ"/>
+                <constraint firstItem="2252" firstAttribute="leading" secondItem="2170" secondAttribute="leading" id="Ka2-Qh-gWO"/>
+                <constraint firstItem="2444" firstAttribute="top" secondItem="2426" secondAttribute="bottom" constant="3" id="Mtv-Np-sLS"/>
+                <constraint firstItem="2170" firstAttribute="trailing" secondItem="2188" secondAttribute="trailing" id="Slc-0o-OmD"/>
+                <constraint firstItem="2170" firstAttribute="centerY" secondItem="2444" secondAttribute="centerY" id="TQJ-3l-fJT"/>
+                <constraint firstItem="2278" firstAttribute="top" secondItem="1884" secondAttribute="top" constant="8" id="UJB-Ra-QcO"/>
+                <constraint firstAttribute="bottom" secondItem="7J7-Pp-KSV" secondAttribute="bottom" constant="8" id="Wim-Mh-3HK"/>
+                <constraint firstAttribute="trailing" secondItem="7J7-Pp-KSV" secondAttribute="trailing" id="YpW-NY-pcr"/>
+                <constraint firstItem="2426" firstAttribute="leading" secondItem="2452" secondAttribute="leading" id="ZRa-8A-orn"/>
+                <constraint firstItem="2426" firstAttribute="trailing" secondItem="2452" secondAttribute="trailing" id="cYt-5u-O2L"/>
+                <constraint firstItem="2278" firstAttribute="leading" secondItem="1970" secondAttribute="trailing" constant="5" id="gek-n3-jEn"/>
+                <constraint firstItem="2170" firstAttribute="leading" secondItem="2197" secondAttribute="leading" id="ihG-lt-KZJ"/>
+                <constraint firstItem="7J7-Pp-KSV" firstAttribute="top" secondItem="2197" secondAttribute="bottom" constant="5" id="j9a-sz-oGU"/>
+                <constraint firstItem="2170" firstAttribute="leading" secondItem="2188" secondAttribute="leading" id="kIN-YF-mlf"/>
+                <constraint firstItem="1973" firstAttribute="centerY" secondItem="2426" secondAttribute="centerY" id="kgg-uL-u3q"/>
+                <constraint firstItem="1980" firstAttribute="trailing" secondItem="1973" secondAttribute="trailing" id="lX3-p6-M2l"/>
+                <constraint firstItem="2462" firstAttribute="centerY" secondItem="2197" secondAttribute="centerY" id="luR-3X-0pI"/>
+                <constraint firstItem="2170" firstAttribute="trailing" secondItem="2252" secondAttribute="trailing" id="m72-a7-Vai"/>
+                <constraint firstItem="2252" firstAttribute="leading" secondItem="2197" secondAttribute="leading" id="mLg-iw-XgS"/>
+                <constraint firstItem="2170" firstAttribute="leading" secondItem="2252" secondAttribute="leading" id="rMI-8o-5Ac"/>
+                <constraint firstItem="2426" firstAttribute="leading" secondItem="2444" secondAttribute="leading" id="rq7-8R-CTH"/>
+                <constraint firstItem="2452" firstAttribute="top" secondItem="2444" secondAttribute="bottom" constant="3" id="sas-zJ-i8t"/>
+                <constraint firstItem="2188" firstAttribute="centerY" secondItem="1980" secondAttribute="centerY" id="swe-PV-jLM"/>
+                <constraint firstItem="2252" firstAttribute="top" secondItem="2278" secondAttribute="bottom" constant="3" id="sy7-8y-5Ux"/>
+                <constraint firstItem="2188" firstAttribute="centerY" secondItem="2452" secondAttribute="centerY" id="u77-wL-TBz"/>
+                <constraint firstItem="1980" firstAttribute="trailing" secondItem="1970" secondAttribute="trailing" id="v3C-O4-xOT"/>
+                <constraint firstItem="2426" firstAttribute="leading" secondItem="2462" secondAttribute="leading" id="yer-A7-Zcg"/>
+                <constraint firstItem="1973" firstAttribute="centerY" secondItem="2252" secondAttribute="centerY" id="yoi-vq-UPO"/>
+                <constraint firstItem="1980" firstAttribute="trailing" secondItem="1974" secondAttribute="trailing" id="yzc-dz-PuA"/>
+                <constraint firstItem="1970" firstAttribute="centerY" secondItem="2278" secondAttribute="centerY" id="z3B-AR-tB9"/>
+            </constraints>
+        </customView>
+        <customView id="3380" userLabel="border">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="241"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3768">
+                    <rect key="frame" x="59" y="216" width="26" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size" id="3769">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3785">
+                    <rect key="frame" x="52" y="170" width="33" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="3786">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="3876" customClass="MGColorWell">
+                    <rect key="frame" x="88" y="165" width="40" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="ZAM-gh-bLF"/>
+                        <constraint firstAttribute="height" constant="24" id="iRl-SX-J4l"/>
+                    </constraints>
+                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.borderColor" id="4213"/>
+                    </connections>
+                </colorWell>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3760" userLabel="Text FieldSizeInput">
+                    <rect key="frame" x="88" y="214" width="156" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="3762">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.borderSize" id="IvR-zj-rH5">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="jF0-zx-feO">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3839">
+                    <rect key="frame" x="46" y="194" width="39" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Radius" id="3843">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3840" userLabel="Text FieldRadiusInput">
+                    <rect key="frame" x="88" y="192" width="156" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="3842">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.borderRadius" id="ZZG-SJ-bJ5">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="8gL-2A-I1J" userLabel="BoxCss">
+                    <rect key="frame" x="32" y="12" width="200" height="150"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="3482" userLabel="innerbox">
+                            <rect key="frame" x="12" y="6" width="176" height="136"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="174" height="134"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="3540" customClass="MGColorWell">
+                                        <rect key="frame" x="37" y="56" width="40" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.leftBorderColor" id="4255"/>
+                                        </connections>
+                                    </colorWell>
+                                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="3549" customClass="MGColorWell">
+                                        <rect key="frame" x="97" y="56" width="40" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.rightBorderColor" id="L4C-z5-Kpm"/>
+                                        </connections>
+                                    </colorWell>
+                                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="3491" customClass="MGColorWell">
+                                        <rect key="frame" x="67" y="89" width="40" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="4SP-tA-d2g"/>
+                                            <constraint firstAttribute="width" constant="40" id="lOf-c0-Nvl"/>
+                                        </constraints>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topBorderColor" id="4246"/>
+                                        </connections>
+                                    </colorWell>
+                                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="3496" customClass="MGColorWell">
+                                        <rect key="frame" x="67" y="23" width="40" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomBorderColor" id="4252"/>
+                                        </connections>
+                                    </colorWell>
+                                </subviews>
+                            </view>
+                            <constraints>
+                                <constraint firstItem="3491" firstAttribute="height" secondItem="3540" secondAttribute="height" id="1FV-Id-F7G"/>
+                                <constraint firstAttribute="bottom" secondItem="3496" secondAttribute="bottom" constant="20" id="8V3-9k-7OZ"/>
+                                <constraint firstAttribute="centerY" secondItem="3549" secondAttribute="centerY" id="9YV-5J-GtO"/>
+                                <constraint firstItem="3491" firstAttribute="width" secondItem="3496" secondAttribute="width" id="Aa4-JA-8iI"/>
+                                <constraint firstItem="3491" firstAttribute="width" secondItem="3549" secondAttribute="width" id="Bob-7f-avA"/>
+                                <constraint firstItem="3496" firstAttribute="centerX" secondItem="3491" secondAttribute="centerX" id="C6D-nj-8ap"/>
+                                <constraint firstItem="3491" firstAttribute="height" secondItem="3496" secondAttribute="height" id="DbA-iR-UOM"/>
+                                <constraint firstItem="3491" firstAttribute="top" secondItem="3482" secondAttribute="top" constant="20" id="Gth-Qc-64S"/>
+                                <constraint firstAttribute="centerX" secondItem="3491" secondAttribute="centerX" id="JHM-n0-S2g"/>
+                                <constraint firstAttribute="trailing" secondItem="3549" secondAttribute="trailing" constant="35" id="JZ9-u3-oDc"/>
+                                <constraint firstItem="3491" firstAttribute="width" secondItem="3540" secondAttribute="width" id="JxZ-XC-pkP"/>
+                                <constraint firstAttribute="centerY" secondItem="3540" secondAttribute="centerY" id="PfS-nz-lIZ"/>
+                                <constraint firstItem="3540" firstAttribute="leading" secondItem="3482" secondAttribute="leading" constant="35" id="c0O-ez-k5m"/>
+                                <constraint firstItem="3491" firstAttribute="height" secondItem="3549" secondAttribute="height" id="rrI-rw-znk"/>
+                            </constraints>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3630" userLabel="Text Field3">
+                            <rect key="frame" x="158" y="131" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3632">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topRightBorderRadius" id="b3H-H6-nyD">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3598" userLabel="Text Field7">
+                            <rect key="frame" x="85" y="0.0" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3600">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomLeftBorderRadius" id="r1t-Nl-xJ6">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4156" userLabel="Text Field8">
+                            <rect key="frame" x="158" y="0.0" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="4157">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomRightBorderRadius" id="zBx-CY-GAY">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3693" userLabel="Text Field4">
+                            <rect key="frame" x="0.0" y="66" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3695">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="htE-wE-ufl">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.leftBorderSize" id="juM-OW-NLz">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3674" userLabel="Text Field2">
+                            <rect key="frame" x="85" y="131" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3675">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="8zT-GK-xSu">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topBorderSize" id="jBO-dA-9ST">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3683" userLabel="Text Field7">
+                            <rect key="frame" x="85" y="0.0" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3684">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomBorderSize" id="33z-3W-e6A">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="JJv-TO-Wtc">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3609" userLabel="Text Field5">
+                            <rect key="frame" x="158" y="66" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3610">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="ffp-ZK-2vp">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.rightBorderSize" id="Lt5-Ag-s9x">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3579" userLabel="Text Field1">
+                            <rect key="frame" x="0.0" y="131" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="BLo-p5-HcF"/>
+                            </constraints>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="3580">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topLeftBorderRadius" id="iAi-ZM-DkH">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j7f-TK-Nbb" userLabel="Text Field6">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="Xk1-hR-htV">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomLeftBorderRadius" id="2i5-JU-b24">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </textField>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wE6-dC-Mhq" userLabel="Stepper1">
+                            <rect key="frame" x="29" y="129" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="w7u-iK-oDX"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topLeftBorderRadius" id="eso-GW-2Rp">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e56-z1-tn7" userLabel="Stepper2">
+                            <rect key="frame" x="114" y="129" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="S5C-PN-bcT"/>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="yoq-3N-Psr">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topBorderSize" id="OG2-HF-F6T">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A5Q-S3-C1s" userLabel="Stepper3">
+                            <rect key="frame" x="187" y="129" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="tmc-XL-pti"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.topRightBorderRadius" id="3q3-3n-6xL">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pWj-Tb-FWR" userLabel="Stepper4">
+                            <rect key="frame" x="29" y="64" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="gRK-AN-FIX"/>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="f5M-iy-vgs">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.leftBorderSize" id="H8Z-51-0nH">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gYR-4s-gxH" userLabel="Stepper5">
+                            <rect key="frame" x="187" y="64" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="s0S-KI-dQL"/>
+                            <connections>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="gkg-Jr-Aem">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.rightBorderSize" id="k3e-qJ-ZRd">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="77w-Uo-sLu" userLabel="Stepper6">
+                            <rect key="frame" x="29" y="-2" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="pKb-7i-7uy"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomLeftBorderRadius" id="fJz-0o-MO6">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AnL-jP-Bbf" userLabel="Stepper7">
+                            <rect key="frame" x="114" y="-2" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="o37-el-A7c"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomBorderSize" id="lFI-iw-VLZ">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="KOz-pJ-vc6">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jcO-fX-UgN" userLabel="Stepper8">
+                            <rect key="frame" x="187" y="-2" width="15" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="NKS-Do-iWM"/>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.bottomRightBorderRadius" id="cCS-FG-jl8">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                                    </dictionary>
+                                </binding>
+                            </connections>
+                        </stepper>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3579" secondAttribute="height" id="3EP-g6-6a6"/>
+                        <constraint firstItem="3693" firstAttribute="leading" secondItem="3579" secondAttribute="leading" id="5DO-WB-3TN"/>
+                        <constraint firstItem="e56-z1-tn7" firstAttribute="centerY" secondItem="A5Q-S3-C1s" secondAttribute="centerY" id="5JH-iX-x2o"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3674" secondAttribute="width" id="7OG-cg-mV6"/>
+                        <constraint firstItem="4156" firstAttribute="centerY" secondItem="j7f-TK-Nbb" secondAttribute="centerY" id="9N7-sz-HCU"/>
+                        <constraint firstItem="AnL-jP-Bbf" firstAttribute="leading" secondItem="3683" secondAttribute="trailing" constant="1" id="Ct9-vP-wHm"/>
+                        <constraint firstAttribute="trailing" secondItem="A5Q-S3-C1s" secondAttribute="trailing" id="CuR-gS-mCW"/>
+                        <constraint firstAttribute="bottom" secondItem="3598" secondAttribute="bottom" id="CyW-gb-mQW"/>
+                        <constraint firstAttribute="centerY" secondItem="3693" secondAttribute="centerY" id="FEx-En-g56"/>
+                        <constraint firstItem="4156" firstAttribute="centerX" secondItem="3630" secondAttribute="centerX" id="FQ5-gc-xPl"/>
+                        <constraint firstItem="e56-z1-tn7" firstAttribute="leading" secondItem="3674" secondAttribute="trailing" constant="1" id="FjO-pm-ywF"/>
+                        <constraint firstItem="3674" firstAttribute="centerY" secondItem="3630" secondAttribute="centerY" id="Fvv-bp-eLO"/>
+                        <constraint firstItem="jcO-fX-UgN" firstAttribute="leading" secondItem="4156" secondAttribute="trailing" constant="1" id="IZx-LY-ZxJ"/>
+                        <constraint firstItem="4156" firstAttribute="centerX" secondItem="3609" secondAttribute="centerX" id="LXS-7Z-ScK"/>
+                        <constraint firstItem="3693" firstAttribute="centerY" secondItem="3609" secondAttribute="centerY" id="LmG-OU-bw2"/>
+                        <constraint firstItem="gYR-4s-gxH" firstAttribute="centerY" secondItem="3609" secondAttribute="centerY" id="M00-rf-Nyv"/>
+                        <constraint firstAttribute="trailing" secondItem="jcO-fX-UgN" secondAttribute="trailing" id="MGW-8b-2r7"/>
+                        <constraint firstAttribute="centerX" secondItem="3598" secondAttribute="centerX" id="Nni-p0-y8H"/>
+                        <constraint firstItem="3674" firstAttribute="centerY" secondItem="3579" secondAttribute="centerY" id="NyW-bD-5lQ"/>
+                        <constraint firstAttribute="bottom" secondItem="3482" secondAttribute="bottom" constant="10" id="Ox9-C5-AdZ"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3579" secondAttribute="width" id="Pr6-Ba-4xU"/>
+                        <constraint firstAttribute="width" constant="200" id="Q5u-gn-hGP"/>
+                        <constraint firstItem="3482" firstAttribute="top" secondItem="8gL-2A-I1J" secondAttribute="top" constant="10" id="QSy-Qt-g4i"/>
+                        <constraint firstItem="pWj-Tb-FWR" firstAttribute="leading" secondItem="3693" secondAttribute="trailing" constant="1" id="RRu-rO-QdI"/>
+                        <constraint firstItem="4156" firstAttribute="centerY" secondItem="3683" secondAttribute="centerY" id="SnV-Cp-AGH"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3674" secondAttribute="height" id="SzQ-px-Zlp"/>
+                        <constraint firstAttribute="height" constant="150" id="U1R-K3-7Pa"/>
+                        <constraint firstItem="e56-z1-tn7" firstAttribute="centerY" secondItem="3579" secondAttribute="centerY" id="UUz-3Z-H8W"/>
+                        <constraint firstItem="3482" firstAttribute="leading" secondItem="8gL-2A-I1J" secondAttribute="leading" constant="15" id="Xpg-no-F7t"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3630" secondAttribute="width" id="YmC-XX-4L0"/>
+                        <constraint firstItem="3683" firstAttribute="centerY" secondItem="3598" secondAttribute="centerY" id="Z1k-Bb-Tpx"/>
+                        <constraint firstItem="j7f-TK-Nbb" firstAttribute="height" secondItem="3693" secondAttribute="height" id="aKD-wH-HSU"/>
+                        <constraint firstItem="A5Q-S3-C1s" firstAttribute="leading" secondItem="3630" secondAttribute="trailing" constant="1" id="acA-Nt-0ct"/>
+                        <constraint firstItem="3683" firstAttribute="centerY" secondItem="4156" secondAttribute="centerY" id="ahn-B0-bhN"/>
+                        <constraint firstItem="4156" firstAttribute="centerY" secondItem="AnL-jP-Bbf" secondAttribute="centerY" id="awk-Dd-sIn"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="4156" secondAttribute="width" id="bFe-4Y-k1E"/>
+                        <constraint firstItem="gYR-4s-gxH" firstAttribute="centerY" secondItem="pWj-Tb-FWR" secondAttribute="centerY" id="bIl-cq-Sb2"/>
+                        <constraint firstItem="j7f-TK-Nbb" firstAttribute="leading" secondItem="3693" secondAttribute="leading" id="cGa-f2-f4I"/>
+                        <constraint firstItem="gYR-4s-gxH" firstAttribute="centerY" secondItem="3693" secondAttribute="centerY" id="dpB-uV-hcJ"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3609" secondAttribute="height" id="ekV-8R-cyc"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3598" secondAttribute="width" id="ftl-YW-Bay"/>
+                        <constraint firstItem="j7f-TK-Nbb" firstAttribute="width" secondItem="3693" secondAttribute="width" id="g1W-4w-39V"/>
+                        <constraint firstItem="3683" firstAttribute="centerX" secondItem="3674" secondAttribute="centerX" id="hep-Yb-7j0"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3683" secondAttribute="width" id="i9O-iv-Qnu"/>
+                        <constraint firstItem="3683" firstAttribute="centerY" secondItem="j7f-TK-Nbb" secondAttribute="centerY" id="jUe-fE-5FM"/>
+                        <constraint firstItem="gYR-4s-gxH" firstAttribute="leading" secondItem="3609" secondAttribute="trailing" constant="1" id="jtX-bP-pxQ"/>
+                        <constraint firstItem="3693" firstAttribute="width" secondItem="3609" secondAttribute="width" id="mRB-I2-8xA"/>
+                        <constraint firstAttribute="centerX" secondItem="3683" secondAttribute="centerX" id="nMY-Cg-uWs"/>
+                        <constraint firstItem="wE6-dC-Mhq" firstAttribute="leading" secondItem="3579" secondAttribute="trailing" constant="1" id="oGh-Yo-9dS"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3683" secondAttribute="height" id="q1N-mm-ALL"/>
+                        <constraint firstItem="3579" firstAttribute="leading" secondItem="8gL-2A-I1J" secondAttribute="leading" id="qTr-Jy-NZw"/>
+                        <constraint firstItem="4156" firstAttribute="centerY" secondItem="77w-Uo-sLu" secondAttribute="centerY" id="qY9-4p-u9B"/>
+                        <constraint firstAttribute="trailing" secondItem="3482" secondAttribute="trailing" constant="15" id="qqQ-Di-Tr8"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="4156" secondAttribute="height" id="rh2-zg-0Xp"/>
+                        <constraint firstItem="e56-z1-tn7" firstAttribute="centerY" secondItem="wE6-dC-Mhq" secondAttribute="centerY" id="vab-PM-xJ5"/>
+                        <constraint firstItem="4156" firstAttribute="centerY" secondItem="jcO-fX-UgN" secondAttribute="centerY" id="wPy-nv-WtZ"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3598" secondAttribute="height" id="yPg-M3-CzB"/>
+                        <constraint firstItem="3693" firstAttribute="height" secondItem="3630" secondAttribute="height" id="ydW-SM-UAO"/>
+                        <constraint firstItem="3579" firstAttribute="top" secondItem="8gL-2A-I1J" secondAttribute="top" id="ylu-NZ-cz7"/>
+                        <constraint firstItem="77w-Uo-sLu" firstAttribute="leading" secondItem="j7f-TK-Nbb" secondAttribute="trailing" constant="1" id="zq9-AN-TvN"/>
+                    </constraints>
+                </customView>
+                <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="nbN-02-clN">
+                    <rect key="frame" x="0.0" y="6" width="264" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tVn-43-hNZ">
+                    <rect key="frame" x="243" y="212" width="15" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="7HQ-7F-Bv2"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.borderSize" id="DfM-yU-p9b">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.pWC.iuController.selection.css.disableBorder" id="Szk-HD-YVA">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </stepper>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x93-uq-8gM">
+                    <rect key="frame" x="243" y="190" width="15" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="yls-jc-Hs2"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.pWC.iuController.selection.css.borderRadius" id="wD0-aD-oOU">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">JDNilToZeroTransformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </stepper>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3785" firstAttribute="trailing" secondItem="3768" secondAttribute="trailing" id="3HM-Jh-L98"/>
+                <constraint firstItem="3760" firstAttribute="leading" secondItem="3768" secondAttribute="trailing" constant="5" id="5OV-OR-923"/>
+                <constraint firstItem="x93-uq-8gM" firstAttribute="centerY" secondItem="3840" secondAttribute="centerY" id="6Am-Ir-9HE"/>
+                <constraint firstAttribute="trailing" secondItem="nbN-02-clN" secondAttribute="trailing" id="AXz-Vd-uup"/>
+                <constraint firstItem="3768" firstAttribute="centerY" secondItem="3760" secondAttribute="centerY" id="Don-N9-IFh"/>
+                <constraint firstAttribute="bottom" secondItem="nbN-02-clN" secondAttribute="bottom" constant="8" id="Dr0-7j-SiL"/>
+                <constraint firstItem="3785" firstAttribute="centerY" secondItem="3876" secondAttribute="centerY" id="QbT-K1-mfD"/>
+                <constraint firstItem="8gL-2A-I1J" firstAttribute="top" secondItem="3876" secondAttribute="bottom" constant="3" id="RU4-KB-WXB"/>
+                <constraint firstItem="3760" firstAttribute="trailing" secondItem="3840" secondAttribute="trailing" id="T5h-w9-8Rx"/>
+                <constraint firstItem="x93-uq-8gM" firstAttribute="trailing" secondItem="tVn-43-hNZ" secondAttribute="trailing" id="UEY-DH-CHM"/>
+                <constraint firstItem="x93-uq-8gM" firstAttribute="leading" secondItem="tVn-43-hNZ" secondAttribute="leading" id="Veb-GU-G6S"/>
+                <constraint firstItem="nbN-02-clN" firstAttribute="top" secondItem="8gL-2A-I1J" secondAttribute="bottom" constant="3" id="X5l-dw-51P"/>
+                <constraint firstItem="3760" firstAttribute="centerY" secondItem="tVn-43-hNZ" secondAttribute="centerY" id="Y2q-nt-CBY"/>
+                <constraint firstItem="3839" firstAttribute="centerY" secondItem="3840" secondAttribute="centerY" id="aV0-Xm-cva"/>
+                <constraint firstItem="8gL-2A-I1J" firstAttribute="centerX" secondItem="3380" secondAttribute="centerX" id="f8P-sY-YnZ"/>
+                <constraint firstItem="3768" firstAttribute="leading" secondItem="3380" secondAttribute="leading" constant="61" id="hwR-Uz-FC7"/>
+                <constraint firstItem="tVn-43-hNZ" firstAttribute="leading" secondItem="3760" secondAttribute="trailing" constant="1" id="jwe-UD-hKM"/>
+                <constraint firstItem="nbN-02-clN" firstAttribute="leading" secondItem="3380" secondAttribute="leading" id="n1z-3N-sxp"/>
+                <constraint firstItem="3760" firstAttribute="top" secondItem="3380" secondAttribute="top" constant="8" id="nNm-L7-rFQ"/>
+                <constraint firstItem="3876" firstAttribute="top" secondItem="3840" secondAttribute="bottom" constant="3" id="nZa-iH-R2w"/>
+                <constraint firstItem="3785" firstAttribute="trailing" secondItem="3839" secondAttribute="trailing" id="nhQ-gP-gQe"/>
+                <constraint firstAttribute="trailing" secondItem="tVn-43-hNZ" secondAttribute="trailing" constant="8" id="npl-da-1uK"/>
+                <constraint firstItem="3760" firstAttribute="leading" secondItem="3840" secondAttribute="leading" id="oX5-qv-urv"/>
+                <constraint firstItem="3840" firstAttribute="top" secondItem="3760" secondAttribute="bottom" constant="3" id="zQC-ZN-awn"/>
+                <constraint firstItem="3840" firstAttribute="leading" secondItem="3876" secondAttribute="leading" id="znl-bB-E1Z"/>
+            </constraints>
+        </customView>
+        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="15g-eV-aq2" userLabel="CSSInspectorView">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="135"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <clipView key="contentView" id="u3C-nB-feM">
+                <rect key="frame" x="0.0" y="0.0" width="264" height="135"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="2i9-zi-EF5">
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="135"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                        <tableColumns>
+                            <tableColumn width="264" minWidth="10" maxWidth="1000" id="Vdc-cs-mqX">
+                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                </tableHeaderCell>
+                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="7Pr-0p-IDH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                <prototypeCellViews>
+                                    <tableCellView id="5s0-al-cQH">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cio-d7-qDN">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="RRw-Kr-GPq">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="textField" destination="Cio-d7-qDN" id="mVA-G3-Mtg"/>
+                                        </connections>
+                                    </tableCellView>
+                                </prototypeCellViews>
+                            </tableColumn>
+                        </tableColumns>
+                        <connections>
+                            <outlet property="dataSource" destination="-2" id="Jnq-nB-jPy"/>
+                            <outlet property="delegate" destination="-2" id="cr1-Zo-xMW"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+            </clipView>
+            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qhC-Sy-asn">
+                <rect key="frame" x="0.0" y="119" width="264" height="16"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="fhh-Ea-r34">
+                <rect key="frame" x="-100" y="-100" width="15" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+        </scrollView>
+        <userDefaultsController representsSharedInstance="YES" id="zR9-zA-aum"/>
+    </objects>
+</document>

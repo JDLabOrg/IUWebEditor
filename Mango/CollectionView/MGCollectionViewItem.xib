@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MGCollectionViewItem">
+            <connections>
+                <outlet property="popover" destination="LNZ-f0-nW6" id="tGI-yf-kO6"/>
+                <outlet property="view" destination="129" id="cwm-PJ-5Zg"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <viewController id="l8d-m7-eug" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="hAk-di-YiU" id="dNb-ep-BjI"/>
+            </connections>
+        </viewController>
+        <popover id="LNZ-f0-nW6">
+            <connections>
+                <outlet property="contentViewController" destination="l8d-m7-eug" id="vHc-d9-xW0"/>
+            </connections>
+        </popover>
+        <userDefaultsController representsSharedInstance="YES" id="44"/>
+        <customView id="hAk-di-YiU" userLabel="PopupView">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="292"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-27-ozb">
+                    <rect key="frame" x="17" y="189" width="86" height="86"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="VR9-52-FPa"/>
+                        <constraint firstAttribute="height" constant="80" id="wr3-zK-YGf"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="ojW-ZA-lML"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.representedObject.image" id="5LT-n2-Acs">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dwC-ez-Gb1">
+                    <rect key="frame" x="106" y="224" width="211" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="n9x-me-Srt">
+                        <font key="font" size="13" name="LucidaGrande-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.representedObject.name" id="6tf-Nf-o9y">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvY-9S-dw1">
+                    <rect key="frame" x="20" y="20" width="295" height="164"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" id="n5W-qe-6pO">
+                        <rect key="frame" x="0.0" y="0.0" width="295" height="164"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="T8M-xc-8tD">
+                                <rect key="frame" x="0.0" y="0.0" width="295" height="164"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="295" height="164"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="295" height="164"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <connections>
+                                    <binding destination="-2" name="attributedString" keyPath="self.representedObject.desc" id="LgV-cZ-guX">
+                                        <dictionary key="options">
+                                            <bool key="NSConditionallySetsEditable" value="NO"/>
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <string key="NSValueTransformerName">JDAttrStringToStringTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="-2" name="hidden" keyPath="self.representedObject.desc" id="bks-7y-oVk"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1DN-Yy-Muc">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="pq1-XM-LyL">
+                        <rect key="frame" x="279" y="0.0" width="16" height="164"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="zvY-9S-dw1" firstAttribute="leading" secondItem="hAk-di-YiU" secondAttribute="leading" constant="20" id="2UW-f1-4HJ"/>
+                <constraint firstItem="MA8-27-ozb" firstAttribute="top" secondItem="hAk-di-YiU" secondAttribute="top" constant="20" id="6vm-i7-7Wf"/>
+                <constraint firstAttribute="bottom" secondItem="zvY-9S-dw1" secondAttribute="bottom" constant="20" id="EFp-eo-Sc7"/>
+                <constraint firstItem="dwC-ez-Gb1" firstAttribute="leading" secondItem="MA8-27-ozb" secondAttribute="trailing" constant="8" id="GFB-jd-GbO"/>
+                <constraint firstItem="MA8-27-ozb" firstAttribute="leading" secondItem="hAk-di-YiU" secondAttribute="leading" constant="20" id="HxO-UW-Bej"/>
+                <constraint firstItem="dwC-ez-Gb1" firstAttribute="centerY" secondItem="MA8-27-ozb" secondAttribute="centerY" id="hTj-KG-4pf"/>
+                <constraint firstItem="zvY-9S-dw1" firstAttribute="top" secondItem="MA8-27-ozb" secondAttribute="bottom" constant="8" id="hqs-Th-Ygz"/>
+                <constraint firstAttribute="trailing" secondItem="dwC-ez-Gb1" secondAttribute="trailing" constant="20" id="sA9-2i-jpy"/>
+                <constraint firstAttribute="trailing" secondItem="zvY-9S-dw1" secondAttribute="trailing" constant="20" id="zxB-XB-bat"/>
+            </constraints>
+        </customView>
+        <box title="Box" boxType="custom" borderType="none" titlePosition="noTitle" id="129" customClass="IUIconViewBox">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="70">
+                        <rect key="frame" x="-1" y="-2.0000000465206984" width="47" height="47"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="45" height="45"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="72">
+                                    <rect key="frame" x="3" y="4.0000000336231301" width="39" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                    <imageCell key="cell" controlSize="small" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="73"/>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="representedObject.image" id="rmT-Qe-cY9"/>
+                                    </connections>
+                                </imageView>
+                            </subviews>
+                        </view>
+                        <constraints>
+                            <constraint firstItem="72" firstAttribute="leading" secondItem="70" secondAttribute="leading" constant="1" id="YxR-Tv-WGx"/>
+                            <constraint firstAttribute="bottom" secondItem="72" secondAttribute="bottom" constant="1" id="d3S-Ec-9In"/>
+                            <constraint firstItem="72" firstAttribute="top" secondItem="70" secondAttribute="top" constant="1" id="eJw-lS-Qf2"/>
+                            <constraint firstAttribute="trailing" secondItem="72" secondAttribute="trailing" constant="1" id="mf1-HK-lPP"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="70" firstAttribute="leading" secondItem="129" secondAttribute="leading" constant="2" id="GEW-fR-bXt"/>
+                <constraint firstItem="70" firstAttribute="top" secondItem="129" secondAttribute="top" constant="2" id="RBl-AE-ZIH"/>
+                <constraint firstAttribute="trailing" secondItem="70" secondAttribute="trailing" constant="2" id="U3h-dh-Jmg"/>
+                <constraint firstAttribute="bottom" secondItem="70" secondAttribute="bottom" constant="2" id="cQ7-Su-rYf"/>
+            </constraints>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+            <connections>
+                <binding destination="-2" name="transparent" keyPath="selected" id="Io2-St-RNg">
+                    <dictionary key="options">
+                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                    </dictionary>
+                </binding>
+                <outlet property="delegate" destination="-2" id="z3D-Nv-kzc"/>
+            </connections>
+        </box>
+    </objects>
+</document>

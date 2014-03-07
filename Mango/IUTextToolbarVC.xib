@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IUTextToolbarVC">
+            <connections>
+                <outlet property="fontColorBtn" destination="ZWR-95-9EZ" id="rLX-za-7dG"/>
+                <outlet property="fontNameBtn" destination="y0d-Pi-l9m" id="0n5-Em-amu"/>
+                <outlet property="fontSizeField" destination="kSC-Oh-2Uh" id="mfT-AQ-xlz"/>
+                <outlet property="fontSizeStepper" destination="Yqk-53-1w1" id="ol0-MH-lrK"/>
+                <outlet property="fontTraitsControl" destination="7Tt-nb-PQB" id="N05-QB-8lq"/>
+                <outlet property="lineSpacingComboBox" destination="RVg-ge-Ul9" id="ihy-cP-QPv"/>
+                <outlet property="textAlignControl" destination="jOd-yn-vgw" id="K8J-ds-Wg2"/>
+                <outlet property="textEditV" destination="799-aT-95g" id="tj2-sd-eo0"/>
+                <outlet property="textV" destination="SN4-8D-py4" id="hcp-LM-KYG"/>
+                <outlet property="view" destination="P2p-bi-IPE" id="pSN-Gz-KAh"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" id="P2p-bi-IPE" userLabel="ToolBar">
+            <rect key="frame" x="0.0" y="0.0" width="1259" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="1259" height="24"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y0d-Pi-l9m">
+                        <rect key="frame" x="17" y="0.0" width="126" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="Osj-Vj-8Zx"/>
+                        </constraints>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dd8-uQ-xQS" id="7n1-Rj-T1G">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <menu key="menu" title="OtherViews" id="QfX-RN-K60">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="dd8-uQ-xQS"/>
+                                    <menuItem title="Item 2" id="Hgr-qM-f9A"/>
+                                    <menuItem title="Item 3" id="Sc8-ih-xeV"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="clickFontNameBtn:" target="-2" id="dbs-uL-iWM"/>
+                            <binding destination="mv4-F7-XiZ" name="content" keyPath="values.fontList" id="RPT-ZK-8jh"/>
+                        </connections>
+                    </popUpButton>
+                    <textField identifier="fontSize" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kSC-Oh-2Uh">
+                        <rect key="frame" x="148" y="3" width="40" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="mV2-LR-jfC"/>
+                        </constraints>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="a5K-10-vyj">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="QcS-GI-158"/>
+                        </connections>
+                    </textField>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-53-1w1">
+                        <rect key="frame" x="187" y="1" width="15" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="200" id="gAh-KD-DDR"/>
+                        <connections>
+                            <action selector="clickFonSizeStepper:" target="-2" id="jfd-br-T21"/>
+                        </connections>
+                    </stepper>
+                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-95-9EZ" customClass="MGColorWell">
+                        <rect key="frame" x="208" y="1" width="30" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="KyD-Io-tXo"/>
+                            <constraint firstAttribute="height" constant="22" id="yra-5j-Lsb"/>
+                        </constraints>
+                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.currentColor" id="Bwh-Do-viZ"/>
+                        </connections>
+                    </colorWell>
+                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Tt-nb-PQB">
+                        <rect key="frame" x="246" y="2" width="72" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" controlSize="small" alignment="left" style="texturedRounded" trackingMode="selectAny" id="4sx-sG-MRO">
+                            <font key="font" metaFont="smallSystem"/>
+                            <segments>
+                                <segment label="B" width="23"/>
+                                <segment label="I" width="23" tag="1"/>
+                                <segment label="U" width="22" tag="2"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="clickFontTraitsControl:" target="-2" id="ag6-lE-Ycv"/>
+                        </connections>
+                    </segmentedControl>
+                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jOd-yn-vgw">
+                        <rect key="frame" x="326" y="2" width="74" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" controlSize="small" alignment="left" style="texturedSquare" trackingMode="selectOne" id="ypk-lI-uUH">
+                            <font key="font" metaFont="smallSystem"/>
+                            <segments>
+                                <segment image="IBAlignTextLeft" width="24">
+                                    <nil key="label"/>
+                                </segment>
+                                <segment image="IBAlignTextCenter" width="23" selected="YES" tag="1">
+                                    <nil key="label"/>
+                                </segment>
+                                <segment image="IBAlignTextRight" width="23" tag="2">
+                                    <nil key="label"/>
+                                </segment>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="clickTextAlignControl:" target="-2" id="eqc-ux-RT3"/>
+                        </connections>
+                    </segmentedControl>
+                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVg-ge-Ul9">
+                        <rect key="frame" x="408" y="0.0" width="68" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="akT-95-bLo"/>
+                        </constraints>
+                        <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Spacing" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="BXa-pF-b2i">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <objectValues>
+                                <string>Auto</string>
+                                <string>1.0</string>
+                                <string>1.3</string>
+                                <string>1.5</string>
+                                <string>2.0</string>
+                            </objectValues>
+                        </comboBoxCell>
+                        <connections>
+                            <action selector="clickLineSpacing:" target="-2" id="kef-be-e7b"/>
+                        </connections>
+                    </comboBox>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-RM-VeC">
+                        <rect key="frame" x="1149" y="3" width="90" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="xOV-bc-wMh"/>
+                        </constraints>
+                        <buttonCell key="cell" type="recessed" title="Black Background" bezelStyle="recessed" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qZy-a0-wCj">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="miniSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="bgColorChangeBtnClick:" target="-2" id="pIB-K3-vgh"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Yqk-53-1w1" secondAttribute="centerY" id="03R-dR-Ree"/>
+                <constraint firstItem="y0d-Pi-l9m" firstAttribute="leading" secondItem="P2p-bi-IPE" secondAttribute="leading" constant="20" id="18q-JE-nDQ"/>
+                <constraint firstAttribute="centerY" secondItem="ZWR-95-9EZ" secondAttribute="centerY" id="EeA-6M-BgI"/>
+                <constraint firstAttribute="centerY" secondItem="xLV-RM-VeC" secondAttribute="centerY" id="Eu9-Un-OBF"/>
+                <constraint firstItem="jOd-yn-vgw" firstAttribute="leading" secondItem="7Tt-nb-PQB" secondAttribute="trailing" constant="8" id="J07-b8-Hrn"/>
+                <constraint firstAttribute="trailing" secondItem="xLV-RM-VeC" secondAttribute="trailing" constant="20" id="MbZ-G4-VsL"/>
+                <constraint firstItem="ZWR-95-9EZ" firstAttribute="leading" secondItem="Yqk-53-1w1" secondAttribute="trailing" constant="8" id="QLi-GF-RS5"/>
+                <constraint firstAttribute="centerY" secondItem="7Tt-nb-PQB" secondAttribute="centerY" id="RQF-MO-MCA"/>
+                <constraint firstAttribute="centerY" secondItem="jOd-yn-vgw" secondAttribute="centerY" id="SVq-ee-HHJ"/>
+                <constraint firstItem="7Tt-nb-PQB" firstAttribute="leading" secondItem="ZWR-95-9EZ" secondAttribute="trailing" constant="8" id="WJO-Nx-pcf"/>
+                <constraint firstItem="RVg-ge-Ul9" firstAttribute="leading" secondItem="jOd-yn-vgw" secondAttribute="trailing" constant="8" id="Ych-Qc-mfG"/>
+                <constraint firstAttribute="centerY" secondItem="RVg-ge-Ul9" secondAttribute="centerY" id="fU6-Hg-F5Y"/>
+                <constraint firstAttribute="centerY" secondItem="y0d-Pi-l9m" secondAttribute="centerY" id="itL-zm-cqB"/>
+                <constraint firstAttribute="centerY" secondItem="kSC-Oh-2Uh" secondAttribute="centerY" id="jV1-1W-Pf7"/>
+                <constraint firstItem="Yqk-53-1w1" firstAttribute="leading" secondItem="kSC-Oh-2Uh" secondAttribute="trailing" constant="1" id="xj9-E9-fm8"/>
+                <constraint firstItem="kSC-Oh-2Uh" firstAttribute="leading" secondItem="y0d-Pi-l9m" secondAttribute="trailing" constant="8" id="zMh-dd-odf"/>
+                <constraint firstItem="Yqk-53-1w1" firstAttribute="leading" secondItem="kSC-Oh-2Uh" secondAttribute="trailing" constant="1" id="zy5-Oe-JbA"/>
+            </constraints>
+            <color key="borderColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+            <color key="fillColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+        </box>
+        <userDefaultsController representsSharedInstance="YES" id="mv4-F7-XiZ"/>
+        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="799-aT-95g">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <clipView key="contentView" id="AAj-hH-C4D">
+                <rect key="frame" x="1" y="1" width="238" height="133"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textView identifier="textView" importsGraphics="NO" selectionGranularity="word" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SN4-8D-py4" customClass="IUTextDragginView">
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                        <size key="minSize" width="238" height="133"/>
+                        <size key="maxSize" width="463" height="10000000"/>
+                        <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="minSize" width="238" height="133"/>
+                        <size key="maxSize" width="463" height="10000000"/>
+                        <connections>
+                            <binding destination="-2" name="attributedString" keyPath="pWC.iuController.selection.attributeText" id="FaR-9A-YdC">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
+                            <outlet property="delegate" destination="-2" id="VbF-4k-Mxt"/>
+                        </connections>
+                    </textView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </clipView>
+            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="nOe-ju-nI8">
+                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BIh-PD-Jff">
+                <rect key="frame" x="223" y="1" width="16" height="133"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+        </scrollView>
+    </objects>
+    <resources>
+        <image name="IBAlignTextCenter" width="20" height="13"/>
+        <image name="IBAlignTextLeft" width="20" height="13"/>
+        <image name="IBAlignTextRight" width="20" height="13"/>
+    </resources>
+</document>

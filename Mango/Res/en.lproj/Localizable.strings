@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Mango
+
+  Created by ChoiSeungmi on 13. 10. 16..
+  Copyright (c) 2013년 JD. All rights reserved.
+*/
+
+/*IU Objects description*/
+
+"IUObjDesc"     = "IUObj is a basic object for IU framework";
+"IURender"      = "IURender is a component object";
+"IUGroup"   = "IUContinaer includes other IUObjects";
+"IUTableList"   = "IUTableList is for Django projects";
+"IUImage"       = "IUImage is a image object";
+"IUTextField"   = "IUTextField is a text object for one line";
+"IUTextView"    = "IUTextView is is a text object for multi-lines";
+"IUTextFieldEdit" = "IUTextFieldedit is a input text object from user";
+"IUWeb"         = "IUWeb includes other web pages";
+"IUTwitter"     = "IUtwitter calls twitter's apps from twitter's developer page";
+"IUWebMovie"    = "IUWebMovie calls video from popular video sites such as youtube";
+"IUMovie"       = "IUMovie calls a uploaded video";

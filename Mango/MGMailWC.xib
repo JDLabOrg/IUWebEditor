@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MGMailWC">
+            <connections>
+                <outlet property="email" destination="Dpc-bp-iL5" id="v7l-eF-CtT"/>
+                <outlet property="msg" destination="EeU-5I-PGs" id="M42-yv-Imr"/>
+                <outlet property="window" destination="1" id="3"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Send Your Opinion" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="1" userLabel="SendOpinionWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="637" height="406"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="2" userLabel="OpinionView">
+                <rect key="frame" x="0.0" y="0.0" width="637" height="406"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <button toolTip="Send your opinion" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-Vl-BhK">
+                        <rect key="frame" x="235" y="14" width="168" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="158" id="ldR-Mq-axw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Send Your Opinion" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ftn-1I-Ayk">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="send:" target="-2" id="sxK-4J-aE7"/>
+                        </connections>
+                    </button>
+                    <scrollView toolTip="Send your opinion to JDLAB. Your opinion can be used to imporove this program." borderType="line" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVJ-hm-1UY">
+                        <rect key="frame" x="124" y="56" width="479" height="299"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="Rku-Ij-WKn">
+                            <rect key="frame" x="1" y="1" width="477" height="297"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="EeU-5I-PGs" userLabel="sendMsg">
+                                    <rect key="frame" x="0.0" y="0.0" width="477" height="297"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="477" height="297"/>
+                                    <size key="maxSize" width="632" height="10000000"/>
+                                    <attributedString key="textStorage">
+                                        <fragment content="Input Your Opinion">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="toolTip"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="477" height="297"/>
+                                    <size key="maxSize" width="632" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="09v-QO-FkC">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="chI-zR-UkO">
+                            <rect key="frame" x="462" y="1" width="16" height="297"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-jz-iKa">
+                        <rect key="frame" x="32" y="372" width="77" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Your E-Mail" id="zin-eB-Lej">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="udA-DN-oc8">
+                        <rect key="frame" x="52" y="347" width="57" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="53" id="NSp-4z-atw"/>
+                        </constraints>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Message" id="rDX-jf-7hi">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="Email Address" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-DN-RXn" userLabel="emailAddress">
+                        <rect key="frame" x="124" y="364" width="479" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="0M9-wR-azs"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="Input Your Email" drawsBackground="YES" id="Dpc-bp-iL5">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IAu-Vl-BhK" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="240" id="9w9-gG-O6i"/>
+                    <constraint firstItem="KMI-jz-iKa" firstAttribute="trailing" secondItem="udA-DN-oc8" secondAttribute="trailing" id="BZw-Am-WqG"/>
+                    <constraint firstAttribute="bottom" secondItem="IAu-Vl-BhK" secondAttribute="bottom" constant="20" symbolic="YES" id="BeG-Zu-xbo"/>
+                    <constraint firstItem="KMI-jz-iKa" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="Hl6-z5-SIe"/>
+                    <constraint firstItem="sVJ-hm-1UY" firstAttribute="trailing" secondItem="hLb-DN-RXn" secondAttribute="trailing" id="I48-ql-dl6"/>
+                    <constraint firstItem="hLb-DN-RXn" firstAttribute="leading" secondItem="KMI-jz-iKa" secondAttribute="trailing" constant="17" id="Io0-mF-KyU"/>
+                    <constraint firstItem="udA-DN-oc8" firstAttribute="top" secondItem="KMI-jz-iKa" secondAttribute="bottom" constant="11" id="JLj-7a-KMz"/>
+                    <constraint firstItem="udA-DN-oc8" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="54" id="NnZ-sO-ehT"/>
+                    <constraint firstItem="sVJ-hm-1UY" firstAttribute="top" secondItem="hLb-DN-RXn" secondAttribute="bottom" constant="9" id="Och-s1-LTz"/>
+                    <constraint firstItem="IAu-Vl-BhK" firstAttribute="top" secondItem="sVJ-hm-1UY" secondAttribute="bottom" constant="18" id="dau-AC-yzs"/>
+                    <constraint firstItem="hLb-DN-RXn" firstAttribute="leading" secondItem="sVJ-hm-1UY" secondAttribute="leading" id="drH-FN-4nS"/>
+                    <constraint firstAttribute="trailing" secondItem="hLb-DN-RXn" secondAttribute="trailing" constant="34" id="fBC-xI-r5T"/>
+                    <constraint firstItem="KMI-jz-iKa" firstAttribute="top" secondItem="hLb-DN-RXn" secondAttribute="top" id="qlw-AC-0IR"/>
+                    <constraint firstItem="KMI-jz-iKa" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="34" id="rm0-cZ-5dK"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="4"/>
+            </connections>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="8va-mr-Gp8"/>
+    </objects>
+</document>

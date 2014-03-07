@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <script>
+            isIUEditor = __IUEditor__;
+            if (typeof isIUEditor == "undefined"){
+                isIUEditor = false;
+            }
+            projectInfo = _IUProjectInfo_;
+        </script>
+        <title>_IUPAGE_TITLE_</title>
+        <meta name="description" content="_IUPAGE_DESCRIPTION_">
+        <meta name="keywords" content="_IUPAGE_KEYWORDS_">
+        <meta name="author" content="_IUPAGE_AUTHOR_">
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script src="_IURes_Dir_/iulib.js"></script>
+        <script src="_IURes_Dir_/iuframe.js"></script>
+        <script src="_IURes_Dir_/iucarousel.js"></script>
+    </head>
+    <style>
+         @import url(_IURes_Dir_/reset.css);
+         @import url(_IURes_Dir_/iu.css);
+    </style>    
+    <script>
+        IUCTXs = {}; // should be empty in the source. save current status // at runtime, IUCTXs[IUName] = {'visible' : true / false }
+        receiverCTXs = _IUReceiver_CTX_; // receiverCTXs[variable] = {IU : (str)fullIUName, vt: (str)value transformer  }
+        triggerCTXs = _IUTrigger_CTX_; //  triggerCTXs[fullIUName] = {event: (str)event name, variable : (str)variable name } // event name : 'click'
+        variableCTXs = _IUVariable_CTX_; // variableCTX[variablename] = {'default': (int)defaultValue, 'value': (int)defaultValue, 'range': (int)range}
+        pageHeight = _IUPageHeight_;
+        
+        loadFinished = false;
+    </script>
+    <style>
+        /*<!-_IUTemplate_CSS_-!>*/
+        /*<!-_IUPage_CSS_-!>*/
+    </style>
+    <style type="text/css" media="screen and (max-width:800px)">
+        /*<!-_IUTemplate_CSS_Tablet-!>*/
+        /*<!-_IUPage_CSS_Tablet_-!>*/
+    </style>
+    <style type="text/css" media="screen and (max-width:320px)">
+        /*<!-_IUTemplate_CSS_Mobile_-!>*/
+        /*<!-_IUPage_CSS_Mobile_-!>*/
+    </style>
+<!-_IUTemplate_HTML_-!>
+</html>

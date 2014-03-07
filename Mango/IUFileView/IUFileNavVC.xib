@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1080" defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IUFileNavVC">
+            <connections>
+                <outlet property="menu" destination="aW8-c6-haU" id="4bj-Qg-AbE"/>
+                <outlet property="outlineV" destination="U0i-du-klp" id="xCq-0B-vNQ"/>
+                <outlet property="popupCopyMI" destination="51A-7n-bEz" id="8xr-ji-IOF"/>
+                <outlet property="popupNewMI" destination="jsX-8G-5ND" id="WYq-nH-26h"/>
+                <outlet property="popupRemoveMI" destination="XAm-7x-k8i" id="ble-Nc-11a"/>
+                <outlet property="view" destination="Pzg-eN-fBq" id="Z4u-3V-Wzs"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="Mi0-IP-UcA" customClass="MGAppController"/>
+        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" id="Pzg-eN-fBq" userLabel="FileView">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="389"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <clipView key="contentView" id="uHw-c8-Z6c">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="389"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" rowSizeStyle="small" viewBased="YES" indentationPerLevel="14" outlineTableColumn="Qgf-W4-myg" id="U0i-du-klp" userLabel="P Navi Outline" customClass="JDOutlineView">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="389"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <size key="intercellSpacing" width="3" height="0.0"/>
+                        <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                        <tableColumns>
+                            <tableColumn identifier="cellTC" width="264.859375" minWidth="16" maxWidth="1000" id="Qgf-W4-myg">
+                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableHeaderCell>
+                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="ZoA-5L-IPi">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <prototypeCellViews>
+                                    <tableCellView identifier="cell" autoresizesSubviews="NO" id="UKn-za-FuI">
+                                        <rect key="frame" x="1" y="0.0" width="265" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="te0-eD-XYf">
+                                                <rect key="frame" x="3" y="4" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Folder21" id="hSk-Gx-ben"/>
+                                            </imageView>
+                                            <textField autoresizesSubviews="NO" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4jH-Ah-92v">
+                                                <rect key="frame" x="26" y="4" width="238" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="index.pgiu" id="Mdb-1a-qiX">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="imageView" destination="te0-eD-XYf" id="yXm-cX-n62"/>
+                                            <outlet property="textField" destination="4jH-Ah-92v" id="uol-u5-Tnd"/>
+                                        </connections>
+                                    </tableCellView>
+                                </prototypeCellViews>
+                            </tableColumn>
+                        </tableColumns>
+                        <connections>
+                            <outlet property="JDDataSource" destination="-2" id="ZYR-cb-4CY"/>
+                            <outlet property="dataSource" destination="-2" id="YTa-wu-Hy6"/>
+                            <outlet property="delegate" destination="-2" id="rVN-I8-t2z"/>
+                            <outlet property="enterKeyDelegate" destination="-2" id="nDX-Q1-rZ8"/>
+                            <outlet property="menu" destination="aW8-c6-haU" id="mMP-4H-MLM"/>
+                        </connections>
+                    </outlineView>
+                </subviews>
+                <nil key="backgroundColor"/>
+            </clipView>
+            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="oTv-Jf-KOa">
+                <rect key="frame" x="0.0" y="364" width="267" height="16"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="xw2-RP-Dgb">
+                <rect key="frame" x="-16" y="0.0" width="16" height="0.0"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+        </scrollView>
+        <menu title="Title" autoenablesItems="NO" id="aW8-c6-haU">
+            <items>
+                <menuItem title="Show in Finder" id="Iix-WP-480">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showInFinder:" target="-2" id="aby-V2-DLr"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="nIe-0T-ptd"/>
+                <menuItem title="New File" id="jsX-8G-5ND">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openNewFileWindow:" target="Mi0-IP-UcA" id="mKY-on-YFv"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Copy File" id="51A-7n-bEz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="popupCopyPressed:" target="-2" id="PKz-yL-A0k"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove File" toolTip="qwer" id="XAm-7x-k8i">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="popupRemovePressed:" target="-2" id="MBj-ke-TEa"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="RyE-Um-ZeA"/>
+            </connections>
+        </menu>
+    </objects>
+    <resources>
+        <image name="Folder21" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,55 @@
+html{
+    min-height : 100%;
+}
+
+body{
+    min-height : 100%;
+}
+
+
+.IUObj{
+    background-repeat: no-repeat;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    position:absolute;
+    display:block;
+//    line-height:0; //prevent inherit
+}
+
+.IUResponsiveSection{
+    background-position: 50%;
+}
+
+.IUNaviLinkBarItem{
+    float:left;
+    position:static;
+}
+
+.IUNaviLinkBar ul{
+    height:100%;
+}
+
+.IUCarouselItem{
+    float:left;
+    position:relative;
+}
+
+.IUCarouselControl{
+    cursor:pointer;
+
+}
+.IUCarouselControlBarItem{
+    cursor:pointer;
+}
+
+.IUSubmitButton{
+    border:0px;
+    padding:0px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}

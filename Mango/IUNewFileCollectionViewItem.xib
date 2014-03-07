@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSCollectionViewItem">
+            <connections>
+                <outlet property="textField" destination="xSR-lX-nR5" id="PNI-1p-g6R"/>
+                <outlet property="view" destination="V8d-FG-s3r" id="Tap-9I-sUb"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <userDefaultsController representsSharedInstance="YES" id="E8R-GB-NRA"/>
+        <box autoresizesSubviews="NO" wantsLayer="YES" transparent="YES" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" id="V8d-FG-s3r" customClass="IUItemBox">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="173"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="173"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-P6-VCi">
+                        <rect key="frame" x="5" y="27" width="101" height="141"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="135" id="aLp-J0-dgP"/>
+                            <constraint firstAttribute="width" constant="95" id="jN1-Ic-gH7"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="YRq-pZ-4aO"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="representedObject.image" id="Lae-YQ-C23"/>
+                        </connections>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xSR-lX-nR5">
+                        <rect key="frame" x="37" y="8" width="37" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="WtL-2K-5JI">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.representedObject.name" id="iJv-zF-ztC"/>
+                        </connections>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="xSR-lX-nR5" secondAttribute="centerX" id="4O9-OR-Gn7"/>
+                <constraint firstAttribute="bottom" secondItem="xSR-lX-nR5" secondAttribute="bottom" constant="8" id="QKA-Q2-mbT"/>
+                <constraint firstItem="bpR-P6-VCi" firstAttribute="top" secondItem="V8d-FG-s3r" secondAttribute="top" constant="8" id="Qg9-Py-wZf"/>
+                <constraint firstItem="xSR-lX-nR5" firstAttribute="top" secondItem="bpR-P6-VCi" secondAttribute="bottom" constant="8" id="Rpm-HB-0b2"/>
+                <constraint firstAttribute="centerX" secondItem="bpR-P6-VCi" secondAttribute="centerX" id="UcI-78-c72"/>
+                <constraint firstAttribute="centerX" secondItem="xSR-lX-nR5" secondAttribute="centerX" id="YLq-Kt-Fg3"/>
+            </constraints>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+            <connections>
+                <binding destination="-2" name="transparent" keyPath="selected" id="LCF-P9-Wf6">
+                    <dictionary key="options">
+                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                    </dictionary>
+                </binding>
+            </connections>
+        </box>
+    </objects>
+</document>
