@@ -14,6 +14,7 @@
 @interface MGStackVC : NSViewController <NSOutlineViewDelegate>{
     NSArray *dragNodesArray;
     __weak IUController *_iuController;
+    BOOL multipleKeyDown;
     
 }
 

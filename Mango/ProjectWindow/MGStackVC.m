@@ -74,6 +74,22 @@
     }
 }
 
+
+-(void)mouseDown:(NSEvent *)theEvent{
+    if( (theEvent.modifierFlags & NSShiftKeyMask)
+       || [theEvent modifierFlags]& NSCommandKeyMask){
+        multipleKeyDown = YES;
+    }
+    else{
+        multipleKeyDown = NO;
+    }
+    
+    
+    if(theEvent.clickCount == 1){
+        [self.pWC.selectedIUViewManager disableTextEditor];
+    }
+}
+
 - (BOOL)control:(NSTextField *)control textShouldBeginEditing:(NSText *)fieldEditor{
     return YES;
 }
@@ -206,7 +222,28 @@
     NSLog(@"draggingSession started");
 }
 
+- (BOOL)checkCurrentNodeDepth:(NSTreeNode *)node{
+    IUObj *obj = [node representedObject];
+    NSUInteger depth = self.pWC.iuController.firstSelection.depth;
+    if (obj.depth == depth) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
+    //multiple select
+    if (multipleKeyDown){
+        return [self checkCurrentNodeDepth:item];
+    }
+    //1개 select
+    //1개라도 depth가 맞지 않으면 no return
+    else {
+        return YES;
+    }
+    
     return YES;
 }
 

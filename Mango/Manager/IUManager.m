@@ -237,6 +237,8 @@
         if([self.clickedObj isKindOfClass:[IUText class]]
            || [self.clickedObj isKindOfClass:[IUTextFieldEdit class]]){
             [self.iuViewManager enableTextEditor:self.clickedObj];
+            [pWC.iuController setSelectionObject:self.clickedObj];
+            [self.clickedObj becomeFocusedIU];
         }
         return;
     }
