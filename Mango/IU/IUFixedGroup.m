@@ -16,6 +16,11 @@
     
 }
 
+-(BOOL)shouldBeInsertedByUser:(IUView *__autoreleasing *)parent atIndex:(NSUInteger *)zIndex{
+    *parent = (*parent).rootIU;
+    return YES;
+}
+
 -(NSMutableDictionary *)CSSDictWithScreenType:(IUScreenType)screenType{
     NSMutableDictionary *dict = [super CSSDictWithScreenType:screenType];
     if(screenType == IUScreenTypeDefault){
