@@ -95,6 +95,8 @@
         [self.deleteKeyDelegate keyDown:event];
         return;
     }
+    
+    
     // still here?
     [super keyDown:event];
     
@@ -107,5 +109,21 @@
 
 }
 
+#pragma mark -
+#pragma mark mouseEvent
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    if([[self delegate] respondsToSelector:@selector(mouseDown:)]){
+        [[self delegate] performSelector:@selector(mouseDown:) withObject:theEvent];
+    }
+    [super mouseDown:theEvent];
+}
+
+- (void)mouseUp:(NSEvent *)theEvent{
+    if([[self delegate] respondsToSelector:@selector(mouseUp:)]){
+        [[self delegate] performSelector:@selector(mouseUp:) withObject:theEvent];
+    }
+    [super mouseUp:theEvent];
+}
 
 @end
