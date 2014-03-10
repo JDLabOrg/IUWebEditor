@@ -1089,6 +1089,7 @@
 		69414F5E1834B36700CF77B6 /* IUComp.png in Resources */ = {isa = PBXBuildFile; fileRef = 69414F5D1834B36700CF77B6 /* IUComp.png */; };
 		69414F601834B36F00CF77B6 /* IUTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 69414F5F1834B36F00CF77B6 /* IUTemplate.png */; };
 		69414F631834CA9900CF77B6 /* IUResponsivePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69414F621834CA9900CF77B6 /* IUResponsivePage.m */; };
+		69423C8A18CDA1B800F128A3 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 69423C8918CDA1B800F128A3 /* Gemfile.lock */; };
 		69464976181BB65F009D2816 /* iupin.png in Resources */ = {isa = PBXBuildFile; fileRef = 69464975181BB65F009D2816 /* iupin.png */; };
 		6946497A181F476A009D2816 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 69464979181F476A009D2816 /* email.png */; };
 		6946673917B4096C00D87879 /* IUBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6946673817B4096C00D87879 /* IUBody.m */; };
@@ -1227,7 +1228,6 @@
 		69AE079C17F1F99800292788 /* IURender.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE079B17F1F99800292788 /* IURender.m */; };
 		69B2B20F17F9D833008F896E /* MGSourceWC.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B2B20D17F9D832008F896E /* MGSourceWC.m */; };
 		69B2B21017F9D833008F896E /* MGSourceWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B2B20E17F9D832008F896E /* MGSourceWC.xib */; };
-		69BA51D818C473A80038CACF /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 69BA51D718C473A80038CACF /* Gemfile.lock */; };
 		69BB4477178C5F6B00122DFE /* IUNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BB4476178C5F6B00122DFE /* IUNote.m */; };
 		69C08B211839E6EE004489A4 /* IUFrameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C08B201839E6EE004489A4 /* IUFrameManager.m */; };
 		69C220AE186980AE002B3712 /* JDKeyDelegatedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C220AD186980AE002B3712 /* JDKeyDelegatedTableView.m */; };
@@ -2402,6 +2402,7 @@
 		69414F5F1834B36F00CF77B6 /* IUTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IUTemplate.png; sourceTree = "<group>"; };
 		69414F611834CA9900CF77B6 /* IUResponsivePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUResponsivePage.h; sourceTree = "<group>"; };
 		69414F621834CA9900CF77B6 /* IUResponsivePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUResponsivePage.m; sourceTree = "<group>"; };
+		69423C8918CDA1B800F128A3 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		69464975181BB65F009D2816 /* iupin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iupin.png; sourceTree = "<group>"; };
 		69464979181F476A009D2816 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		6946673717B4096C00D87879 /* IUBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IUBody.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -2621,7 +2622,6 @@
 		69B2B20C17F9D832008F896E /* MGSourceWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSourceWC.h; sourceTree = "<group>"; };
 		69B2B20D17F9D832008F896E /* MGSourceWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSourceWC.m; sourceTree = "<group>"; };
 		69B2B20E17F9D832008F896E /* MGSourceWC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MGSourceWC.xib; path = Manager/MGSourceWC.xib; sourceTree = "<group>"; };
-		69BA51D718C473A80038CACF /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		69BB4475178C5F6B00122DFE /* IUNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUNote.h; sourceTree = "<group>"; };
 		69BB4476178C5F6B00122DFE /* IUNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUNote.m; sourceTree = "<group>"; };
 		69C08B1F1839E6EE004489A4 /* IUFrameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUFrameManager.h; path = Mango/IUFrameManager.h; sourceTree = SOURCE_ROOT; };
@@ -3710,7 +3710,6 @@
 			isa = PBXGroup;
 			children = (
 				3DDD27B618B756D0008536CD /* README.rtf */,
-				69BA51D718C473A80038CACF /* Gemfile.lock */,
 				696B843718B20161007812E3 /* MGProgrammableTextField.h */,
 				696B843818B20161007812E3 /* MGProgrammableTextField.m */,
 				69D2813418AE06260095DB3D /* MGFrameButton.h */,
@@ -4483,6 +4482,7 @@
 		69AADDB117E7042A00C7E999 /* compile */ = {
 			isa = PBXGroup;
 			children = (
+				69423C8918CDA1B800F128A3 /* Gemfile.lock */,
 				69AADDB217E7042A00C7E999 /* config.ru */,
 				69AADDB317E7042A00C7E999 /* config.ru.unit */,
 				69AADDB417E7042A00C7E999 /* Gemfile */,
@@ -5024,6 +5024,7 @@
 				3DD8F854184756E50057E531 /* UITabBarControllerIcon.tiff in Resources */,
 				3D476B5418473CC90076F767 /* male-symbolwoc.png in Resources */,
 				3DD8F76F184756E50057E531 /* IBConstraintBadge-Equal.tiff in Resources */,
+				69423C8A18CDA1B800F128A3 /* Gemfile.lock in Resources */,
 				3D47694C184739070076F767 /* social-quora.png in Resources */,
 				3D476920184739070076F767 /* question.png in Resources */,
 				3DD8F81C184756E50057E531 /* TB_ViewUtilities.png in Resources */,
@@ -5060,7 +5061,6 @@
 				3DD8F746184756E50057E531 /* Classic_NSNavEjectButton.pressed.tiff in Resources */,
 				3D476BC118473CC90076F767 /* text-heightwoc.png in Resources */,
 				3D476AC818473CC90076F767 /* arrow-left-bold-roundwoc.png in Resources */,
-				69BA51D818C473A80038CACF /* Gemfile.lock in Resources */,
 				3DD8F808184756E50057E531 /* ruby.jpeg in Resources */,
 				3DD8F85D184756E50057E531 /* UIViewControllerIcon.tiff in Resources */,
 				3DD8F79B184756E50057E531 /* IDEBRIssueView_Expanded-Down.tiff in Resources */,
