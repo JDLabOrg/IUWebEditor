@@ -1054,8 +1054,6 @@
 		3DDD27B718B756D0008536CD /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DDD27B618B756D0008536CD /* README.rtf */; };
 		3DE161B2183B17120069EF8D /* IUAssistantLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161B1183B17120069EF8D /* IUAssistantLayer.m */; };
 		3DE161BB183B6F710069EF8D /* IUPointTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161BA183B6F710069EF8D /* IUPointTextLayer.m */; };
-		3DE161BD183CB19C0069EF8D /* IUModificationProjectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE161BC183CB19C0069EF8D /* IUModificationProjectVC.xib */; };
-		3DE161C8183CBBA00069EF8D /* IUModificationProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161C6183CBBA00069EF8D /* IUModificationProjectVC.m */; };
 		3DE508BB1817A2AF00B02874 /* IUHttpLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE508BA1817A2AF00B02874 /* IUHttpLog.m */; };
 		3DE508C81817B51D00B02874 /* IUProjectCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE508C61817B51D00B02874 /* IUProjectCollectionViewItem.xib */; };
 		3DECD59C18588758008D1229 /* IUInspectorCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DECD59A18588758008D1229 /* IUInspectorCellVC.m */; };
@@ -1079,6 +1077,8 @@
 		691F30C617FEB7EA00BA33AE /* MGNewProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F30C417FEB7EA00BA33AE /* MGNewProjectVC.m */; };
 		691F30C717FEB7EA00BA33AE /* MGNewProjectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 691F30C517FEB7EA00BA33AE /* MGNewProjectVC.xib */; };
 		69209BCE1789459C00FB7931 /* IUTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69209BCD1789459C00FB7931 /* IUTwitter.m */; };
+		692B158E18CD679200B0EE25 /* MGProjectModificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 692B158D18CD679200B0EE25 /* MGProjectModificationVC.m */; };
+		692B159018CD67BA00B0EE25 /* MGProjectModificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B158F18CD67BA00B0EE25 /* MGProjectModificationVC.xib */; };
 		6932D03C188A8DA000DDED7C /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 6932D03B188A8DA000DDED7C /* line.png */; };
 		6932D03F188AA35200DDED7C /* MGFrameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6932D03E188AA35200DDED7C /* MGFrameTextField.m */; };
 		6936ED81178E7849009A3D23 /* IUPresTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6936ED80178E7849009A3D23 /* IUPresTemplate.m */; };
@@ -2345,9 +2345,6 @@
 		3DE161B1183B17120069EF8D /* IUAssistantLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUAssistantLayer.m; path = IUCanvasView/IUAssistantLayer.m; sourceTree = "<group>"; };
 		3DE161B9183B6F710069EF8D /* IUPointTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUPointTextLayer.h; path = IUCanvasView/IUPointTextLayer.h; sourceTree = "<group>"; };
 		3DE161BA183B6F710069EF8D /* IUPointTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUPointTextLayer.m; path = IUCanvasView/IUPointTextLayer.m; sourceTree = "<group>"; };
-		3DE161BC183CB19C0069EF8D /* IUModificationProjectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IUModificationProjectVC.xib; sourceTree = "<group>"; };
-		3DE161C5183CBBA00069EF8D /* IUModificationProjectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUModificationProjectVC.h; sourceTree = "<group>"; };
-		3DE161C6183CBBA00069EF8D /* IUModificationProjectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUModificationProjectVC.m; sourceTree = "<group>"; };
 		3DE508B91817A2AF00B02874 /* IUHttpLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUHttpLog.h; path = Mango/IUlib/IUHttpLog.h; sourceTree = "<group>"; };
 		3DE508BA1817A2AF00B02874 /* IUHttpLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUHttpLog.m; path = Mango/IUlib/IUHttpLog.m; sourceTree = "<group>"; };
 		3DE508C61817B51D00B02874 /* IUProjectCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IUProjectCollectionViewItem.xib; path = CollectionView/IUProjectCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -2386,6 +2383,9 @@
 		691F30C517FEB7EA00BA33AE /* MGNewProjectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MGNewProjectVC.xib; path = ProjectWindow/InitWindow/MGNewProjectVC.xib; sourceTree = "<group>"; };
 		69209BCC1789459C00FB7931 /* IUTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUTwitter.h; sourceTree = "<group>"; };
 		69209BCD1789459C00FB7931 /* IUTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUTwitter.m; sourceTree = "<group>"; };
+		692B158C18CD679200B0EE25 /* MGProjectModificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProjectModificationVC.h; sourceTree = "<group>"; };
+		692B158D18CD679200B0EE25 /* MGProjectModificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProjectModificationVC.m; sourceTree = "<group>"; };
+		692B158F18CD67BA00B0EE25 /* MGProjectModificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGProjectModificationVC.xib; sourceTree = "<group>"; };
 		6932D03B188A8DA000DDED7C /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		6932D03D188AA35200DDED7C /* MGFrameTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFrameTextField.h; sourceTree = "<group>"; };
 		6932D03E188AA35200DDED7C /* MGFrameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFrameTextField.m; sourceTree = "<group>"; };
@@ -3248,7 +3248,7 @@
 				69A81697177F209B00600909 /* MGProjectWC.xib */,
 				69A815E9177F209B00600909 /* MainMenu.xib */,
 				69B2B20E17F9D832008F896E /* MGSourceWC.xib */,
-				3DE161BC183CB19C0069EF8D /* IUModificationProjectVC.xib */,
+				692B158F18CD67BA00B0EE25 /* MGProjectModificationVC.xib */,
 			);
 			name = IUxibs;
 			sourceTree = "<group>";
@@ -3994,14 +3994,14 @@
 		69A81655177F209B00600909 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				692B158C18CD679200B0EE25 /* MGProjectModificationVC.h */,
+				692B158D18CD679200B0EE25 /* MGProjectModificationVC.m */,
 				69A81656177F209B00600909 /* IUManager.h */,
 				69A81657177F209B00600909 /* IUManager.m */,
 				69A8165A177F209B00600909 /* MGAppController.h */,
 				69A8165B177F209B00600909 /* MGAppController.m */,
 				69B2B20C17F9D832008F896E /* MGSourceWC.h */,
 				69B2B20D17F9D832008F896E /* MGSourceWC.m */,
-				3DE161C5183CBBA00069EF8D /* IUModificationProjectVC.h */,
-				3DE161C6183CBBA00069EF8D /* IUModificationProjectVC.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -4924,7 +4924,6 @@
 				3D476B2118473CC90076F767 /* email-downloadwoc.png in Resources */,
 				3DD8F800184756E50057E531 /* QuartzComposer.tiff in Resources */,
 				3DD8F7E7184756E50057E531 /* NSViewYMarginFlexible.tiff in Resources */,
-				3DE161BD183CB19C0069EF8D /* IUModificationProjectVC.xib in Resources */,
 				3DD8F855184756E50057E531 /* UITabBarIcon.tiff in Resources */,
 				3D476903184739070076F767 /* music.png in Resources */,
 				3D476ADE18473CC90076F767 /* arrow-up-lightwoc.png in Resources */,
@@ -5534,6 +5533,7 @@
 				3D476949184739070076F767 /* social-paypal.png in Resources */,
 				3D47696F184739070076F767 /* text-size-upper.png in Resources */,
 				3DD805D61829FF8B0008FB0A /* IUMovie.rtf in Resources */,
+				692B159018CD67BA00B0EE25 /* MGProjectModificationVC.xib in Resources */,
 				3D476B1518473CC90076F767 /* dot-circlewoc.png in Resources */,
 				3DD8F7EA184756E50057E531 /* object.tiff in Resources */,
 				3D476B4F18473CC90076F767 /* login-lock-refreshwoc.png in Resources */,
@@ -5775,7 +5775,6 @@
 				3D936FB1186D9D2E0069C005 /* IUFixedGroup.m in Sources */,
 				3DBF286C1898C8EA00C258E0 /* IUCarouselControlBar.m in Sources */,
 				3DD24A7C1846DDC2007A7B40 /* IULeftFirstTabVC.m in Sources */,
-				3DE161C8183CBBA00069EF8D /* IUModificationProjectVC.m in Sources */,
 				3DBF28661898B06D00C258E0 /* IUCarouselControl.m in Sources */,
 				69A81805177F209D00600909 /* MGClassSelectVC.m in Sources */,
 				3D49CE80185AC80600F6CCE4 /* SFTabView.m in Sources */,
@@ -5808,6 +5807,7 @@
 				69A8181B177F209D00600909 /* IUFile.m in Sources */,
 				693BD2F91890F38600F0F953 /* IUBottomSticker.m in Sources */,
 				69A8181C177F209D00600909 /* IUFooter.m in Sources */,
+				692B158E18CD679200B0EE25 /* MGProjectModificationVC.m in Sources */,
 				3DE161BB183B6F710069EF8D /* IUPointTextLayer.m in Sources */,
 				69AD9AB0185AFC9800CEDA4A /* IUInspectorViewItemManager.m in Sources */,
 				69A8181E177F209D00600909 /* IUHeader.m in Sources */,

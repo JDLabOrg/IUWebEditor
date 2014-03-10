@@ -1,18 +1,18 @@
 //
-//  IUModificationProjectVC.m
+//  MGProjectModificationVC.m
 //  WebGenerator
 //
 //  Created by ChoiSeungmi on 2013. 11. 20..
 //  Copyright (c) 2013년 jdlab.org. All rights reserved.
 //
 
-#import "IUModificationProjectVC.h"
+#import "MGProjectModificationVC.h"
 
-@interface IUModificationProjectVC ()
+@interface MGProjectModificationVC ()
 
 @end
 
-@implementation IUModificationProjectVC
+@implementation MGProjectModificationVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

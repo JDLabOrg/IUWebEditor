@@ -30,6 +30,7 @@
 #import "IUCloseWindowController.h"
 #import "IUScreenFrame.h"
 #import "MGImageViewController.h"
+#import "MGProjectModificationVC.h"
 
 NSString *const resourceFileName = @"Resource";
 
@@ -43,6 +44,7 @@ NSString *const resourceFileName = @"Resource";
 
     MGNewFileWC *newFileWC;
     IUSyncWindowController *syncWC;
+    
     MGProjectModificationVC *modifyResource;
     
     BOOL isDataChanged;
@@ -95,7 +97,7 @@ NSString *const resourceFileName = @"Resource";
 
     
     sourceWC = [[MGSourceWC alloc] initWithWindowNibName:@"MGSourceWC"];
-    modifyResource = [[MGProjectModificationVC alloc] initWithNibName:@"IUModificationProjectVC" bundle:nil];
+    modifyResource = [[MGProjectModificationVC alloc] initWithNibName:@"MGProjectModificationVC" bundle:nil];
     
     //connect View
     [self.bottomView addSubviewFullFrame:self.bottomMenuView];
@@ -369,7 +371,7 @@ NSString *const resourceFileName = @"Resource";
 
 /* Modify Project Resource Attributes*/
 - (void)setProjectResource:(MGFileItem*)fileItem{
-    //call IUModificationProjectVC attach centerV!
+    //call MGProjectModificationVC attach centerV!
     NSLog(@"MGProjectWC call! in setProjectResource");
     if(self.selectedIUManager){
         [modifyResource setIUProject:self];

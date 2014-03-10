@@ -94,7 +94,7 @@
         }
         if ([JDHerokuUtil isLogined] == NO) {
             //login
-            [self.project.herokuUtil login:@"jdyang@jdlab.org" password:@"********"];
+            [self.project.herokuUtil login:@"jdyang@jdlab.org" password:@"******"];
 
             while (1) {
                 if (self.herokuResult) {

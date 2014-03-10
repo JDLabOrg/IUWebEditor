@@ -1,5 +1,5 @@
 //
-//  IUModificationProjectVC.h
+//  MGProjectModificationVC.h
 //  WebGenerator
 //
 //  Created by ChoiSeungmi on 2013. 11. 20..
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface IUModificationProjectVC : NSViewController{
+@interface MGProjectModificationVC : NSViewController{
     MGProjectWC *pWC;
     NSString *basePath;
     NSString *selectedProjectType;
