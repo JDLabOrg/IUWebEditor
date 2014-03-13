@@ -12,6 +12,7 @@
 #import "MGNewRackProjectVC.h"
 #import "MGNewProjectVC.h"
 #import "JDHerokuUtil.h"
+#import "MGHerokuLoginWC.h"
 
 @interface MGNewRackProjectVC ()
 
@@ -41,10 +42,16 @@
     self.gitSelectDisable = NO;
 
     switch (_cloudIdx) {
-        case 0: self.cloud = nil; break;
+        case 0:{
+            self.cloud = nil;
+            self.myID = nil;
+            self.gitSelectDisable = NO;
+            break;
+        }
         case 1: {
             /* if heroku, check heroku toolbelt */
             if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/bin/heroku"] == NO) {
+                /* heroku toolbelt not exist */
                 NSAlert *alertMsg = [NSAlert alertWithMessageText:@"Heroku Error" defaultButton:@"OK" alternateButton:@"Visit Heroku download page" otherButton:nil informativeTextWithFormat:@"Please install Heroku, or select no cloud"];
                 NSInteger intV = [alertMsg runModal];
                 if (intV == 0) {
@@ -53,14 +60,40 @@
                 self.cloudIdx = 0;
                 return;
             }
+            else{
+                /* heroku toolbelt exist */
+                [self.project.herokuUtil updateLoginInfo];
+                if (self.project.herokuUtil.logined == NO) {
+                    if (hWC == nil) {
+                        hWC = [[MGHerokuLoginWC alloc] initWithWindowNibName:@"MGHerokuLoginWC"];
+                        hWC.herokuUtil = self.project.herokuUtil;
+                    }
+                    [self.view.window beginSheet:hWC.window completionHandler:^(NSModalResponse returnCode){
+                        switch (returnCode) {
+                            case NSModalResponseOK:{
+                                    [self setHerokuAsCloud];
+                                }
+                                break;
+                            default:{
+                                self.cloudIdx = 0;
+                            }
+                        }
+                    }];
+                }
+                else {
+                    [self setHerokuAsCloud];
+                }
+            }
 
-            self.cloud = @"heroku";
-            self.gitSelectDisable = YES;
-            self.gitIdx = 2;
-            self.myID = [JDHerokuUtil loginID];
-            break;
         }
     }
+}
+
+-(void)setHerokuAsCloud{
+    self.cloud = @"heroku";
+    self.myID = self.project.herokuUtil.loginID;
+    self.gitIdx = 2;
+    self.gitSelectDisable = YES;
 }
 
 -(void)gitIdxDidChange{
@@ -83,57 +116,25 @@
 
 -(BOOL)pressFinishBtn{
     if ([self.cloud isEqualToString:@"heroku"]) {
-        /* if heroku, check heroku toolbelt */
-        if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/bin/heroku"] == NO) {
-            NSAlert *alertMsg = [NSAlert alertWithMessageText:@"Heroku error" defaultButton:@"OK" alternateButton:@"Visit Heroku download page" otherButton:nil informativeTextWithFormat:@"Please install Heroku, or select no cloud"];
-            NSInteger intV = [alertMsg runModal];
-            if (intV == 0) {
-                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://toolbelt.heroku.com/"]];
-            }
+        if (self.project.herokuUtil.logined == NO) {
+            [JDLogUtil alert:@"Heroku Error"];
             return NO;
         }
-        if ([JDHerokuUtil isLogined] == NO) {
-            //login
-            [self.project.herokuUtil login:@"jdyang@jdlab.org" password:@"******"];
-
-            while (1) {
-                if (self.herokuResult) {
-                    break;
-                }
-            }
-            
-            if ([JDHerokuUtil isLogined] == NO) {
-                [JDLogUtil alert:@"Heroku login failed"];
-                return NO;
-            }
-            else{
-                [JDLogUtil alert:@"Heroku login success" title:@"Heroku Login Result"];
-            }
-        }
-        @try {
-            [self.project.herokuUtil create:self.appName];
-        }
-        @catch (NSException *exception) {
-            [JDLogUtil alert:[exception reason]];
+        //heroku init
+        NSString *resultLog;
+        BOOL createResult = [self.project.herokuUtil create:self.appName resultLog:&resultLog];
+        if (createResult == NO) {
+            [JDLogUtil alert:resultLog title:@"Heroku Error"];
             return NO;
         }
     }
-    
     NSString *appDir = [[[JDFileUtil util] openDirectoryByNSOpenPanel:@"Select directory for project"] path];
     if (appDir == nil) { // cancel
         return NO;
     }
-    
-    @try {
-        [self.project startWithDir:appDir widget:self.initilizeWidget];
-    }
-    @catch (NSException *exception) {
-        [JDLogUtil alert:exception.description title:@"Unknown Error"];
-        return NO;
-    }
-
-    return YES;
+    return [self.project startWithDir:appDir widget:self.initilizeWidget];
 }
+
 
 -(void)dealloc{
     [self removeObserver:self forKeyPath:@"cloudIdx"];

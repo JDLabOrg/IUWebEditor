@@ -254,10 +254,9 @@
 }
 
 
--(void)startWithDir:(NSString*)dir widget:(IUWidget *)widget{
+-(BOOL)startWithDir:(NSString*)dir widget:(IUWidget *)widget{
     if (self.appName == nil) {
-        [NSException raise:@"appName" format:@"no app name"];
-        return;
+        return NO;
     }
     NSString *newfileName = [NSString stringWithFormat:@"%@/%@.iuproject", _appName, _appName];
     
@@ -267,12 +266,17 @@
     //set root file item
     self.rootFileItem = [MGRootFileItem fileItemWithName:_appName type:MGFileItemTypeProject project:self];
     
-    [self initDir:widget];
-    [self initFile:widget];
-    [self initEnv:widget];
-    [self save];
-}
+    GotoErrorIfNot([self initDir:widget]);
+    GotoErrorIfNot([self initFile:widget]);
+    GotoErrorIfNot([self initEnv:widget]);
 
+    [self save];
+    return YES;
+
+Error:
+    [self removeProjectDir];
+    return NO;
+}
 
 -(void)setFilePath:(NSString *)filePath{
     fileName = [filePath lastPathComponent];
@@ -362,19 +366,28 @@
 
 
 
--(void)initDir:(IUWidget *)widget{
-    [JDFileUtil mkdirPath:fileDir atDirecory:nil];
+-(BOOL)initDir:(IUWidget *)widget{
+    ReturnNoIfNot([JDFileUtil mkdirPath:fileDir]);
     
     //create IU Dir
-    [self.rootFileItem createSubDirectoryAndFileItems];
-    
+    ReturnNoIfNot([self.rootFileItem createSubDirectoryAndFileItems]);
+
     //create output and object Dir
-    [JDFileUtil mkdirPath:self.absoluteObjectDir atDirecory:nil];
-    [JDFileUtil mkdirPath:self.absoluteResDirPath atDirecory:nil];
-    [JDFileUtil mkdirPath:self.absoluteObjectDir atDirecory:nil];
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteObjectDir]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteResDirPath]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteObjectDir]);
+
+    return YES;
 }
 
--(void)initFile:(IUWidget *)widget{
+
+-(void)removeProjectDir{
+    [JDFileUtil rmDirPath:fileDir];
+}
+
+
+
+-(BOOL)initFile:(IUWidget *)widget{
     IUPage *page;
     IUComp *comp;
     IUTemplate *template;
@@ -404,9 +417,10 @@
 
     
     [self copyResourceToResDir];
+    return YES;
 }
 
--(void)copyResourceToResDir{
+-(BOOL)copyResourceToResDir{
     
     NSError *err;
 
@@ -455,10 +469,11 @@
             [NSException raise:@"Initialize Resource Image File" format:err.description, nil];
         }
     }
+    return YES;
 }
 
 
--(void)initEnv:(IUWidget *)widget{
+-(BOOL)initEnv:(IUWidget *)widget{
     /* git init */
     if ([_git isEqualToString:@"output"] || [_git isEqualToString:@"source"]) {
 //        self.gitUtil = [[JDGitUtil alloc] initWithProject:self];
@@ -469,6 +484,7 @@
     if ([self.cloud isEqualToString:@"heroku"]) {
         [self.herokuUtil combineGit];
     }
+    return YES;
 }
 
 -(NSString*) absoluteResDirPath{

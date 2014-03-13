@@ -43,7 +43,7 @@
     return @[widget];
 }
 
--(void)initFile:(IUWidget *)widget{
+-(BOOL)initFile:(IUWidget *)widget{
     IUPage *page;
     IUComp *comp;
     IUTemplate *template;
@@ -71,8 +71,10 @@
         [template saveAsFileWithPath:templateFileItem.absolutePath];
     }
     
-    [self copyResourceToResDir];
-
+    if ([self copyResourceToResDir]){
+        return NO;
+    }
+    return YES;
 }
 
 -(IUCompileResult*)buildProject{

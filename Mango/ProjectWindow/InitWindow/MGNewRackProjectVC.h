@@ -13,10 +13,14 @@
 #import "MGNewEmptyProjectVC.h"
 #import "MGNewProjectVC.h"
 
-@interface MGNewRackProjectVC : MGNewEmptyProjectVC <NSAlertDelegate>
+@class MGHerokuLoginWC;
+@interface MGNewRackProjectVC : MGNewEmptyProjectVC <NSAlertDelegate>{
+    MGHerokuLoginWC *hWC;
+}
 
 @property NSUInteger      cloudIdx;
 @property NSUInteger      gitIdx;
+@property BOOL            gitSelectionDisabled;
 @property BOOL              herokuResult;
 
 @property NSString          *myID;

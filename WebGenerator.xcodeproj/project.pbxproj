@@ -1089,7 +1089,6 @@
 		69414F5E1834B36700CF77B6 /* IUComp.png in Resources */ = {isa = PBXBuildFile; fileRef = 69414F5D1834B36700CF77B6 /* IUComp.png */; };
 		69414F601834B36F00CF77B6 /* IUTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 69414F5F1834B36F00CF77B6 /* IUTemplate.png */; };
 		69414F631834CA9900CF77B6 /* IUResponsivePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69414F621834CA9900CF77B6 /* IUResponsivePage.m */; };
-		69423C8A18CDA1B800F128A3 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 69423C8918CDA1B800F128A3 /* Gemfile.lock */; };
 		69464976181BB65F009D2816 /* iupin.png in Resources */ = {isa = PBXBuildFile; fileRef = 69464975181BB65F009D2816 /* iupin.png */; };
 		6946497A181F476A009D2816 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 69464979181F476A009D2816 /* email.png */; };
 		6946673917B4096C00D87879 /* IUBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6946673817B4096C00D87879 /* IUBody.m */; };
@@ -1106,6 +1105,7 @@
 		696B843918B20161007812E3 /* MGProgrammableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 696B843818B20161007812E3 /* MGProgrammableTextField.m */; };
 		6970D6E318A22123006439EE /* emptyIndex.html in Resources */ = {isa = PBXBuildFile; fileRef = 6970D6E218A22123006439EE /* emptyIndex.html */; };
 		6971B2DE1802B58500C565A4 /* heroku_login in Resources */ = {isa = PBXBuildFile; fileRef = 6971B2DD1802B58500C565A4 /* heroku_login */; };
+		697C366618D14F1100BC32F7 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 697C366518D14F1100BC32F7 /* Gemfile.lock */; };
 		69865A95188F6BFE00370456 /* check_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 69865A94188F6BFE00370456 /* check_16.png */; };
 		69865A97188F6C9100370456 /* blank_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 69865A96188F6C9100370456 /* blank_16.png */; };
 		69865A99188F6DCB00370456 /* blank_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 69865A98188F6DCB00370456 /* blank_1.png */; };
@@ -1165,7 +1165,6 @@
 		69A8183C177F209D00600909 /* JDScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8164C177F209B00600909 /* JDScrollView.m */; };
 		69A8183D177F209D00600909 /* JDUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8164E177F209B00600909 /* JDUIUtil.m */; };
 		69A8183E177F209D00600909 /* JDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A81651177F209B00600909 /* JDView.m */; };
-		69A8183F177F209D00600909 /* NSString+RegularExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A81653177F209B00600909 /* NSString+RegularExp.m */; };
 		69A81840177F209D00600909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A81654177F209B00600909 /* main.m */; };
 		69A81841177F209D00600909 /* IUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A81657177F209B00600909 /* IUManager.m */; };
 		69A81842177F209D00600909 /* IUViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A81659177F209B00600909 /* IUViewManager.m */; };
@@ -1235,6 +1234,8 @@
 		69C25392188954F80030A6F9 /* MGToolbarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C25391188954F80030A6F9 /* MGToolbarDelegate.m */; };
 		69C4974C188FBA61003691EF /* MGColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C4974B188FBA61003691EF /* MGColorWell.m */; };
 		69C725B6189CD45100561F62 /* MGStackCellV.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C725B5189CD45100561F62 /* MGStackCellV.m */; };
+		69C9DF8918CED00B000C6DA0 /* MGHerokuLoginWC.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DF8718CED00B000C6DA0 /* MGHerokuLoginWC.m */; };
+		69C9DF8A18CED00B000C6DA0 /* MGHerokuLoginWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C9DF8818CED00B000C6DA0 /* MGHerokuLoginWC.xib */; };
 		69CB7E001855A8F30080B694 /* IUWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB7DFF1855A8F30080B694 /* IUWidget.m */; };
 		69CB7E0B1857119D0080B694 /* IUFileNavVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB7E0A1857119D0080B694 /* IUFileNavVCCell.xib */; };
 		69CD0C5A18A3EC21001C9BBF /* chocolate.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CD0C5918A3EC21001C9BBF /* chocolate.png */; };
@@ -2402,7 +2403,6 @@
 		69414F5F1834B36F00CF77B6 /* IUTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IUTemplate.png; sourceTree = "<group>"; };
 		69414F611834CA9900CF77B6 /* IUResponsivePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUResponsivePage.h; sourceTree = "<group>"; };
 		69414F621834CA9900CF77B6 /* IUResponsivePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUResponsivePage.m; sourceTree = "<group>"; };
-		69423C8918CDA1B800F128A3 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		69464975181BB65F009D2816 /* iupin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iupin.png; sourceTree = "<group>"; };
 		69464979181F476A009D2816 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		6946673717B4096C00D87879 /* IUBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IUBody.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -2427,6 +2427,7 @@
 		696B843818B20161007812E3 /* MGProgrammableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProgrammableTextField.m; sourceTree = "<group>"; };
 		6970D6E218A22123006439EE /* emptyIndex.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = emptyIndex.html; sourceTree = "<group>"; };
 		6971B2DD1802B58500C565A4 /* heroku_login */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = heroku_login; sourceTree = "<group>"; };
+		697C366518D14F1100BC32F7 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		69865A94188F6BFE00370456 /* check_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check_16.png; path = original/check_16.png; sourceTree = "<group>"; };
 		69865A96188F6C9100370456 /* blank_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank_16.png; path = original/blank_16.png; sourceTree = "<group>"; };
 		69865A98188F6DCB00370456 /* blank_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank_1.png; path = original/blank_1.png; sourceTree = "<group>"; };
@@ -2535,8 +2536,6 @@
 		69A8164F177F209B00600909 /* JDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDUtils.h; sourceTree = "<group>"; };
 		69A81650177F209B00600909 /* JDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDView.h; sourceTree = "<group>"; };
 		69A81651177F209B00600909 /* JDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDView.m; sourceTree = "<group>"; };
-		69A81652177F209B00600909 /* NSString+RegularExp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RegularExp.h"; sourceTree = "<group>"; };
-		69A81653177F209B00600909 /* NSString+RegularExp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RegularExp.m"; sourceTree = "<group>"; };
 		69A81654177F209B00600909 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69A81656177F209B00600909 /* IUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IUManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		69A81657177F209B00600909 /* IUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IUManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -2635,6 +2634,9 @@
 		69C4974B188FBA61003691EF /* MGColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGColorWell.m; sourceTree = "<group>"; };
 		69C725B4189CD45100561F62 /* MGStackCellV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGStackCellV.h; sourceTree = "<group>"; };
 		69C725B5189CD45100561F62 /* MGStackCellV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGStackCellV.m; sourceTree = "<group>"; };
+		69C9DF8618CED00B000C6DA0 /* MGHerokuLoginWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHerokuLoginWC.h; sourceTree = "<group>"; };
+		69C9DF8718CED00B000C6DA0 /* MGHerokuLoginWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHerokuLoginWC.m; sourceTree = "<group>"; };
+		69C9DF8818CED00B000C6DA0 /* MGHerokuLoginWC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGHerokuLoginWC.xib; sourceTree = "<group>"; };
 		69CB7DFE1855A8F30080B694 /* IUWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUWidget.h; sourceTree = "<group>"; };
 		69CB7DFF1855A8F30080B694 /* IUWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUWidget.m; sourceTree = "<group>"; };
 		69CB7E0A1857119D0080B694 /* IUFileNavVCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IUFileNavVCCell.xib; sourceTree = "<group>"; };
@@ -3709,6 +3711,9 @@
 		6906120616B41E2400C2FDC8 = {
 			isa = PBXGroup;
 			children = (
+				69C9DF8618CED00B000C6DA0 /* MGHerokuLoginWC.h */,
+				69C9DF8718CED00B000C6DA0 /* MGHerokuLoginWC.m */,
+				69C9DF8818CED00B000C6DA0 /* MGHerokuLoginWC.xib */,
 				3DDD27B618B756D0008536CD /* README.rtf */,
 				696B843718B20161007812E3 /* MGProgrammableTextField.h */,
 				696B843818B20161007812E3 /* MGProgrammableTextField.m */,
@@ -3971,8 +3976,6 @@
 				69A81651177F209B00600909 /* JDView.m */,
 				69877E9E17857F5E009E3A0D /* JDWebUtil.h */,
 				69877E9F17857F5E009E3A0D /* JDWebUtil.m */,
-				69A81652177F209B00600909 /* NSString+RegularExp.h */,
-				69A81653177F209B00600909 /* NSString+RegularExp.m */,
 				69A6AF01179D60F500C41C72 /* JDTextField.h */,
 				69A6AF02179D60F500C41C72 /* JDTextField.m */,
 				69A6AF04179D643000C41C72 /* JDTextFieldCell.h */,
@@ -4482,7 +4485,7 @@
 		69AADDB117E7042A00C7E999 /* compile */ = {
 			isa = PBXGroup;
 			children = (
-				69423C8918CDA1B800F128A3 /* Gemfile.lock */,
+				697C366518D14F1100BC32F7 /* Gemfile.lock */,
 				69AADDB217E7042A00C7E999 /* config.ru */,
 				69AADDB317E7042A00C7E999 /* config.ru.unit */,
 				69AADDB417E7042A00C7E999 /* Gemfile */,
@@ -5024,7 +5027,6 @@
 				3DD8F854184756E50057E531 /* UITabBarControllerIcon.tiff in Resources */,
 				3D476B5418473CC90076F767 /* male-symbolwoc.png in Resources */,
 				3DD8F76F184756E50057E531 /* IBConstraintBadge-Equal.tiff in Resources */,
-				69423C8A18CDA1B800F128A3 /* Gemfile.lock in Resources */,
 				3D47694C184739070076F767 /* social-quora.png in Resources */,
 				3D476920184739070076F767 /* question.png in Resources */,
 				3DD8F81C184756E50057E531 /* TB_ViewUtilities.png in Resources */,
@@ -5155,6 +5157,7 @@
 				3DD8F788184756E50057E531 /* IBViewSizeInspectorOriginMaxXMidY-On.tiff in Resources */,
 				3DD8F7E3184756E50057E531 /* NSViewWidthSizable.tiff in Resources */,
 				3DD8F740184756E50057E531 /* CheckSelectedHighlighted.tiff in Resources */,
+				69C9DF8A18CED00B000C6DA0 /* MGHerokuLoginWC.xib in Resources */,
 				3D476887184739070076F767 /* arrow-up-thin.png in Resources */,
 				3D476B0218473CC90076F767 /* cloud-uploadwoc.png in Resources */,
 				3D476981184739070076F767 /* wifi.png in Resources */,
@@ -5540,6 +5543,7 @@
 				3D476977184739070076F767 /* upload-selection-circle.png in Resources */,
 				3D4768B2184739070076F767 /* contract-vertical.png in Resources */,
 				3D4768E9184739070076F767 /* like-ban.png in Resources */,
+				697C366618D14F1100BC32F7 /* Gemfile.lock in Resources */,
 				3DD8F75A184756E50057E531 /* Empty 2.tiff in Resources */,
 				3D476B0418473CC90076F767 /* coinswoc.png in Resources */,
 				3D4768BE184739070076F767 /* dot-square.png in Resources */,
@@ -5848,7 +5852,6 @@
 				69889AB9180DAD62001689AB /* IUEventVariableTrigger.m in Sources */,
 				69A8183D177F209D00600909 /* JDUIUtil.m in Sources */,
 				69A8183E177F209D00600909 /* JDView.m in Sources */,
-				69A8183F177F209D00600909 /* NSString+RegularExp.m in Sources */,
 				69A81840177F209D00600909 /* main.m in Sources */,
 				694C80FB18A3858A00B0508E /* MGSampleProjectSelectionVC.m in Sources */,
 				69A81841177F209D00600909 /* IUManager.m in Sources */,
@@ -5884,6 +5887,7 @@
 				3DBF28531896307C00C258E0 /* IUFBLike.m in Sources */,
 				69CB7E001855A8F30080B694 /* IUWidget.m in Sources */,
 				3D936FAD186C31970069C005 /* IUCloseWindowController.m in Sources */,
+				69C9DF8918CED00B000C6DA0 /* MGHerokuLoginWC.m in Sources */,
 				69209BCE1789459C00FB7931 /* IUTwitter.m in Sources */,
 				69BB4477178C5F6B00122DFE /* IUNote.m in Sources */,
 				6936ED81178E7849009A3D23 /* IUPresTemplate.m in Sources */,

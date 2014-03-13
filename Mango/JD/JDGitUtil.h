@@ -17,7 +17,7 @@
 }
 -(id)initWithProject:(IUProject*)project;
 -(BOOL)gitInit;
--(NSString*)addAll;
--(NSString*)commit:(NSString*)commitMsg;
--(NSString*)push:(NSString*)remote branch:(NSString*)branch;
+-(BOOL)addAll;
+-(BOOL)commit:(NSString*)commitMsg;
+-(BOOL)push:(NSString*)remote branch:(NSString*)branch;
 @end

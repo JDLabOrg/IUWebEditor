@@ -78,15 +78,16 @@
 -(MGNewProjectVC*)initializeVC;
 +(id)project;
 
--(void)startWithDir:(NSString*)dir widget:(IUWidget*)widget;
+-(BOOL)startWithDir:(NSString*)dir widget:(IUWidget*)widget;
 
 
 -(id)initWithContentOfFile:(NSString*)filePath;
 -(void)setFilePath:(NSString*)tFilePath;
 
--(void)initDir:(IUWidget*)widget;
--(void)initFile:(IUWidget*)widget;
--(void)initEnv:(IUWidget*)widget;
+-(BOOL)initDir:(IUWidget*)widget;
+-(BOOL)initFile:(IUWidget*)widget;
+-(BOOL)initEnv:(IUWidget*)widget;
+-(void)removeProjectDir;
 
 -(void)save;
 -(NSString*)filePath;
@@ -127,5 +128,5 @@
 -(NSString*)toHTMLURL:(NSString*)source;
 
 -(BOOL)programmable;
--(void)copyResourceToResDir;
+-(BOOL)copyResourceToResDir;
 @end

@@ -93,6 +93,10 @@
 -(void)exportToObj:(id)obj;
 @end
 
+typedef enum _SORGXMatchOption{
+    SORGXMatchOptionExtractToEnd
+}SORGXMatchOption;
+
 @interface NSString (JDExtension)
 -(NSString*)stringEscape;
 - (NSString*)lastLine;
@@ -116,6 +120,13 @@
 
 - (NSString*)stringByChangeExtension:(NSString*)extension;
 - (NSString*)stringByIndent:(NSUInteger)indent;
+
+- (BOOL)isValidEmail;
+#define RGXEmailPattern @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+
+- (NSArray*) RGXMatchAllStringsWithPatten:(NSString*)patten;
+
+
 @end
 
 @interface NSMutableString(JDExtension)

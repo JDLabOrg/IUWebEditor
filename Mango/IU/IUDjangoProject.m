@@ -37,15 +37,13 @@
     return dVC;
 }
 
--(void)startWithDir:(NSString*)dir widget:(IUWidget *)widget{
+-(BOOL)startWithDir:(NSString*)dir widget:(IUWidget *)widget{
     if (self.appName == nil) {
-        [NSException raise:@"appName" format:@"no app name"];
-        return;
+        return NO;
     }
     
     if (self.appName == nil) {
-        [NSException raise:@"appName" format:@"no app name"];
-        return;
+        return NO;
     }
 
     NSString *newfileName = [NSString stringWithFormat:@"%@.iuproject", self.appName];
@@ -53,27 +51,35 @@
     //set root file item
     self.rootFileItem = [MGRootFileItem fileItemWithName:self.appName type:MGFileItemTypeProject project:self];
 
-    [self initDir:widget];
-    [self initFile:widget];
-    [self initEnv:widget];
+    GotoErrorIfNot([self initDir:widget]);
+    GotoErrorIfNot([self initFile:widget]);
+    GotoErrorIfNot([self initEnv:widget]);
+    GotoErrorIfNot([self initDir:widget]);
+
     [self save];
+    return YES;
+    
+Error:
+    [self removeProjectDir];
+    return NO;
 }
 
 -(IUCompiler*)compiler{
     return [[IUDjangoCompiler alloc] init];
 }
 
--(void)initDir:(IUWidget *)widget{
-    [JDFileUtil mkdirPath:fileDir atDirecory:nil];
+-(BOOL)initDir:(IUWidget *)widget{
+    ReturnNoIfNot([JDFileUtil mkdirPath:fileDir]);
     
     //create IU Dir
-    [self.rootFileItem createSubDirectoryAndFileItems];
+    ReturnNoIfNot([self.rootFileItem createSubDirectoryAndFileItems]);
     
     //create output and object Dir
-    [JDFileUtil mkdirPath:self.absoluteObjectDir atDirecory:nil];
-    [JDFileUtil mkdirPath:self.absoluteResDirPath atDirecory:nil];
-    [JDFileUtil mkdirPath:self.absoluteOutputDir atDirecory:nil];
-    [JDFileUtil mkdirPath:[self.absoluteOutputDir stringByAppendingPathComponent:@"res"] atDirecory:nil];
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteObjectDir]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteResDirPath]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:self.absoluteOutputDir ]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:[self.absoluteOutputDir stringByAppendingPathComponent:@"res"]]);
+    return YES;
 }
 
 
@@ -94,8 +100,8 @@
     return [self.outputDir stringByAppendingPathComponent:@"object"];
 }
 
--(void)copyResourceToResDir{
-    [JDFileUtil mkdirPath:[self.absoluteOutputDir stringByAppendingPathComponent:@"res"] atDirecory:nil];
+-(BOOL)copyResourceToResDir{
+    ReturnNoIfNot([JDFileUtil mkdirPath:[self.absoluteOutputDir stringByAppendingPathComponent:@"res"]]);
 
     NSError *err;
     NSArray *resArray = @[//Image files
@@ -143,17 +149,18 @@
         [[NSFileManager defaultManager] removeItemAtPath:destPath error:nil];
         [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:destPath error:&err];
         if (err) {
-            [NSException raise:@"Initialize Resource Image File" format:err.description, nil];
+            return NO;
         }
         
         destPath = [[self.absoluteOutputDir stringByAppendingPathComponent:@"res"] stringByAppendingPathComponent:resName];
         [[NSFileManager defaultManager] removeItemAtPath:destPath error:nil];
         [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:destPath error:&err];
         if (err) {
-            [NSException raise:@"Initialize Resource Image File" format:err.description, nil];
+            return NO;
         }
 
     }
+    return YES;
 }
 
 

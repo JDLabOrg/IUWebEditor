@@ -10,7 +10,7 @@
 //
 
 #import "JDObjectExtension.h"
-#import "NSString+RegularExp.h"
+#import "JDDataStructUtil.h"
 
 
 @implementation NSObject(JDObjectExtension)
@@ -172,7 +172,7 @@
             [self performSelector:s  withObject:object withObject:change];
 #pragma clang diagnostic pop
         }
-        NSString *match = [contextStr rgxMatchFirstStringWithPatten:@"@selector\\([^)]*\\)"];
+        NSString *match = [[contextStr RGXMatchAllStringsWithPatten:@"@selector\\([^)]*\\)"] firstObject];
         if (match) {
             NSString *selectorName = [match substringFromIndex:10 toIndex:match.length-1];
             s = NSSelectorFromString(selectorName);

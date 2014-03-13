@@ -263,9 +263,9 @@
     [self addFileItem:templateDir];
     [self addFileItem:compDir];
     
-    [JDFileUtil mkdirPath:pageDir.absolutePath atDirecory:@"/"];
-    [JDFileUtil mkdirPath:templateDir.absolutePath atDirecory:@"/"];
-    [JDFileUtil mkdirPath:compDir.absolutePath atDirecory:@"/"];
+    ReturnNoIfNot([JDFileUtil mkdirPath:pageDir.absolutePath]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:templateDir.absolutePath]);
+    ReturnNoIfNot([JDFileUtil mkdirPath:compDir.absolutePath]);
     
     return YES;
 }

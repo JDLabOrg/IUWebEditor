@@ -505,6 +505,8 @@ NSString *const resourceFileName = @"Resource";
 }
 
 - (void)sync:(NSString*)remote branch:(NSString*)branch message:(NSString*)message{
+    assert(0);
+    /*
     if ([remote length]==0 || [branch length]==0 || [message length]==0){
         [JDLogUtil alert:@"Input all fields (remote, branch, message)"];
         return;
@@ -521,6 +523,7 @@ NSString *const resourceFileName = @"Resource";
             [JDLogUtil alert:exception.reason];
         }
     }
+     */
 }
 
 

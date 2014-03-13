@@ -611,6 +611,45 @@
 }
 
 
+- (BOOL)isValidEmail{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:self];
+}
+
+
+- (NSArray*) RGXMatchAllStringsWithPatten:(NSString*)patten{
+    NSRegularExpression *rgx=[NSRegularExpression regularExpressionWithPattern:patten options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+    
+    NSArray *matches= [rgx matchesInString:self options:0 range:NSMakeRange(0, self.length)];
+    
+    NSMutableArray *retArray= [NSMutableArray array];
+    
+    int modifier;
+    
+        for (modifier=0; modifier<[patten length]; modifier++) {
+            char characterAtIndex=[patten characterAtIndex:modifier];
+            char characterBeforeIndex='\0';
+            if (modifier>0) {
+                characterBeforeIndex=[patten characterAtIndex:modifier-1];
+            }
+            if ( ( characterAtIndex=='[' || characterAtIndex == '.' || characterAtIndex == '(' ) && characterBeforeIndex != '\\'  ) {
+                //found
+                break;
+            }
+        }
+    
+    for (NSTextCheckingResult *match in matches) {
+
+        [retArray addObject:[self substringWithRange:match.range]];
+    }
+    return [NSArray arrayWithArray:retArray];
+}
+
+
+
+
 
 @end
 

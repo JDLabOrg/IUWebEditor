@@ -11,6 +11,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class JDHerokuUtil;
+
+@protocol JDHerokuUtilLoginDelegate <NSObject>
+@required
+
+-(void)herokuUtil:(JDHerokuUtil*)util loginProcessFinishedWithResultCode:(NSInteger)resultCode;
+@end
 @class  IUProject;
 
 #define kNotiHerokuLogin @"kNotiHerokuLogin"
@@ -19,11 +26,15 @@
     IUProject   *project;
 }
 
-
-+(BOOL)isLogined;
-+(NSString*)loginID;
 -(id)initWithProject:(IUProject*)project;
--(void)create:(NSString*)appName;
+-(BOOL)create:(NSString*)appName resultLog:(NSString**)resultLog;
 -(void)login:(NSString*)myid password:(NSString*)mypasswd;
--(void)combineGit;
+-(BOOL)combineGit;
+-(void)updateLoginInfo;
+
+@property NSString *loginID;
+@property BOOL  logging;
+@property BOOL  logined;
+@property id <JDHerokuUtilLoginDelegate>    loginDelegate;
+
 @end

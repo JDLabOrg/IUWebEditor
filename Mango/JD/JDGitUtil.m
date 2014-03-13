@@ -23,28 +23,38 @@
 
 -(BOOL)gitInit{
     NSString *gitPath = [[NSBundle mainBundle] pathForResource:@"git" ofType:@""];
-    NSString *string = [[JDFileUtil util] launch:gitPath atDirectory:project.absoluteGitDir argument:@"init"];
-    NSLog (@"grep returned:\n%@", string);
-    return YES;
+    NSString *log, *errLog;
+    NSInteger result = [JDFileUtil launch:gitPath atDirectory:project.absoluteGitDir arguments:@[@"init"] stdOut:&log stdErr:&errLog];
+    NSLog (@"git init returned:\n%@ + %@", log, errLog);
+    return !result;
 }
 
--(NSString*)addAll{
+-(BOOL)addAll{
     NSString *gitPath = [[NSBundle mainBundle] pathForResource:@"git" ofType:@""];
-    
-    return [[JDFileUtil util] launch:gitPath atDirectory:project.absoluteGitDir arguments:@[@"add", @"."]];
+    NSString *log, *errLog;
+    NSInteger resultCode = [JDFileUtil launch:gitPath atDirectory:project.absoluteGitDir arguments:@[@"add", @"."] stdOut:&log stdErr:&errLog];
+    NSLog (@"git init returned:\n%@ + %@", log, errLog);
+    return !resultCode;
 }
 
--(NSString*)commit:(NSString*)commitMsg{
+-(BOOL)commit:(NSString*)commitMsg{
     NSString *gitPath = [[NSBundle mainBundle] pathForResource:@"git" ofType:@""];
     NSString *msg = [NSString stringWithFormat:@"'%@'", commitMsg];
+    NSString *log, *errLog;
+    NSInteger resultCode = [JDFileUtil launch:gitPath atDirectory:project.absoluteGitDir arguments:@[@"commit", @"-a", @"-m",msg] stdOut:&log stdErr:&errLog];
+    NSLog (@"git init returned:\n%@ + %@", log, errLog);
+    return !resultCode;
 
-    return [[JDFileUtil util] launch:gitPath atDirectory:project.absoluteGitDir arguments:@[@"commit", @"-a", @"-m",msg]];
 }
 
--(NSString*)push:(NSString*)remote branch:(NSString*)branch{
+-(BOOL)push:(NSString*)remote branch:(NSString*)branch{
     NSString *gitPath = [[NSBundle mainBundle] pathForResource:@"git" ofType:@""];
+
+    NSString *log, *errLog;
+    NSInteger resultCode = [JDFileUtil launch:gitPath atDirectory:project.absoluteGitDir arguments:[NSMutableArray arrayWithObjects:@"push", remote, branch, nil] stdOut:&log stdErr:&errLog];
     
-    return [[JDFileUtil util] launch:gitPath atDirectory:project.absoluteGitDir arguments:[NSMutableArray arrayWithObjects:@"push", remote, branch, nil]];
+    return !resultCode;
+    
 }
 
 @end

@@ -14,5 +14,10 @@
 #define  kMGFileItem @"kMGFileItem"
 #define kIUImageURL @"kIUImageURL"
 
+
+#define ReturnNoIfNot(a) if(a == NO) { return NO; }
+#define GotoErrorIfNot(a) if(a == NO) { goto Error; }
+
+
 //#define DefinedIUSortDescriptor [[NSSortDescriptor alloc] initWithKey:@"iuFrame.z" ascending:NO]
 #endif

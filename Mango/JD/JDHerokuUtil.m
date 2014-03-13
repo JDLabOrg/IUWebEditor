@@ -18,51 +18,72 @@
     self = [super init];
     if (self) {
         project = _project;
+        [self updateLoginInfo];;
     }
     return self;
 }
 
-+(BOOL)isLogined{
-    [JDLogUtil log:@"isLogined" log:@"heroku"];
+-(void)updateLoginInfo{
     NSString *netrc = [@"~/.netrc" stringByExpandingTildeInPath];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:netrc] == NO) {
-        return NO;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:netrc]) {
+        NSString *str = [NSString stringWithContentsOfFile:netrc encoding:NSUTF8StringEncoding error:nil];
+        if ([str length] > 30) {
+            self.logined = YES;
+            NSArray *emailPatterns = [str RGXMatchAllStringsWithPatten:RGXEmailPattern];
+            self.loginID = [emailPatterns objectAtIndex:0];
+            return;
+        }
     }
-    else if ([[NSData dataWithContentsOfFile:netrc] length] == 0){
-        return NO;
-    }
-    return YES;
+    self.logined = NO;
+    self.loginID = nil;
 }
+
 
 +(NSString*)loginID{
     [JDLogUtil log:@"loginID" log:@"heroku"];
     NSString *resPath = [[NSBundle mainBundle] pathForResource:@"herokuauth.sh" ofType:nil];
-    NSString *result = [[JDFileUtil util] launch:resPath atDirectory:@"/" argument:nil];
-    if ([JDFileUtil util].lastStatusCode == 0) {
-        return [[result trim] lastLine];
+    NSString *errLog, *log;
+    NSInteger resultCode = [JDFileUtil launch:resPath atDirectory:@"/" arguments:nil stdOut:&log stdErr:&errLog];
+    if (resultCode == 0) {
+        return [[log trim] lastLine];
     }
-    else{
-        return nil;
-    }
+    return nil;
 }
 
--(void)create:(NSString*)appName{
+-(BOOL)create:(NSString*)appName resultLog:(NSString**)resultLog{
     [JDLogUtil log:@"create" log:@"heroku"];
-    [[JDFileUtil util] launch:@"/usr/bin/heroku" atDirectory:@"/" arguments:@[@"create",appName]];
+    NSString *stdOut;
+    NSString *stdErr;
+    NSInteger returnCode = [JDFileUtil launch:@"/usr/bin/heroku" atDirectory:@"/" arguments:@[@"create",appName] stdOut:&stdOut stdErr:&stdErr];
+    if (returnCode) {
+        if (resultLog) {
+            *resultLog = stdErr;
+        }
+        return NO;
+    }
+    if (resultLog) {
+        *resultLog = stdOut;
+    }
+    return YES;
 }
 
 -(void)login:(NSString*)myid password:(NSString*)mypasswd{
     [JDLogUtil log:@"login" log:@"heroku"];
+    NSString *resPath = [[NSBundle mainBundle] pathForResource:@"heroku_login" ofType:nil];
+    self.logging = YES;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
-        NSString *resPath = [[NSBundle mainBundle] pathForResource:@"heroku_login" ofType:nil];
-        [[JDFileUtil util] launch:resPath atDirectory:@"/" arguments:@[myid, mypasswd]];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotiHerokuLogin object:nil];
+        NSInteger resultCode = [JDFileUtil launch:resPath atDirectory:@"/" arguments:@[myid, mypasswd] stdOut:nil stdErr:nil];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            self.logging = NO;
+            [self updateLoginInfo];
+            [self.loginDelegate herokuUtil:self loginProcessFinishedWithResultCode:resultCode];
+        });
     });
 }
 
--(void)combineGit{
-    [[JDFileUtil util] launch:@"/usr/bin/heroku" atDirectory:project.absoluteGitDir arguments:@[@"git:remote", @"-a", project.appName]];
+-(BOOL)combineGit{
+    [JDFileUtil launch:@"/usr/bin/heroku" atDirectory:project.absoluteGitDir arguments:@[@"git:remote", @"-a", project.appName] stdOut:nil stdErr:nil];
+    return YES;
 }
 
 

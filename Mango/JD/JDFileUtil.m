@@ -46,26 +46,23 @@ static JDFileUtil *sharedJDFileUtill;
     return NO;
 }
 
-+(NSString*)mkdirPath:(NSString*)path atDirecory:(NSString*)dir{
-    return [self mkdirPath:path atDirecory:dir touchDummy:YES];
+
++(BOOL)mkdirPath:(NSString*)path{
+    NSString *stdErr;
+    NSInteger resultCode = [JDFileUtil launch:@"/bin/mkdir" atDirectory:@"/" arguments:@[@"-p", path] stdOut:nil stdErr:&stdErr];
+    if (resultCode !=0 ) {
+        NSLog(@"err at mkdirpath");
+    }
+    return !resultCode;
 }
 
-+(NSString*)mkdirPath:(NSString*)path atDirecory:(NSString*)dir touchDummy:(BOOL)dummy{
-    if (dir == nil) {
-        dir = @"/";
-    }
-    NSArray *argu = [NSArray arrayWithObjects:@"-p", [NSString stringWithFormat:@"./%@/",path], nil];
-    NSString *result = [[JDFileUtil util] launch:@"/bin/mkdir" atDirectory:dir arguments:argu];
-    if (dummy) {
-        result = [[JDFileUtil util] launch:@"/usr/bin/touch" atDirectory:[NSString stringWithFormat:@"%@/%@",dir,path] argument:@".dummy"];
-    }
-    return result;
++(void)rmDirPath:(NSString*)path{
+    [JDFileUtil launch:@"/bin/rm" atDirectory:@"/" arguments:@[@"-rf", path] stdOut:nil stdErr:nil];
 }
 
-+(NSString*)touch:(NSString*)file atDirecory:(NSString*)dir{
-    NSString *touchFile=[NSString stringWithFormat:@"./%@",file];
-    NSString *result = [[JDFileUtil util] launch:@"/usr/bin/touch" atDirectory:dir argument:touchFile];
-    return result;
++(BOOL)touch:(NSString*)filePath{
+    NSInteger resultCode = [JDFileUtil launch:@"/usr/bin/touch" atDirectory:@"/" arguments:@[filePath] stdOut:nil stdErr:nil];
+    return !resultCode;
 }
 
 
@@ -134,173 +131,42 @@ static JDFileUtil *sharedJDFileUtill;
     return [self openDirectoryByNSOpenPanel:nil];
 }
 
--(NSString*) launch:(NSString*)launchPath atDirectory:(NSString*)directoryPath argument:(NSString*)argument{
-    if (argument == nil) {
-        return [self launch:launchPath atDirectory:directoryPath arguments:nil];
-    }
-    return [self launch:launchPath atDirectory:directoryPath arguments:[NSArray arrayWithObject:argument]];
-}
-
--(BOOL)shellCommandExist:(NSString*)command raiseException:(BOOL)raise{
-    if ([command length] == 0) {
-        [NSException raise:@"JDArgumentNilException" format:nil];
-    }
-
-    if (raise) {
-        NSString *output = [self launch:@"/usr/bin/which" atDirectory:@"/" argument:command];
-        [shellCommandDict setObject:output forKey:command];
-        return YES;
-    }
-    else{
-        @try {
-            NSString *output = [[self launch:@"/usr/bin/which" atDirectory:@"/" argument:command] trim];
-            [shellCommandDict setObject:output forKey:command];
-            return YES;
-        }
-        @catch (NSException *exception) {
-            return NO;
-        }
-    }
-}
 
 
--(BOOL)shellCommandExist:(NSString*)command{
-    return [self shellCommandExist:command raiseException:NO];
-}
 
--(NSString*) launchShellCommand:(NSString*)command atDirectory:(NSString*)directory argument:(NSString*)argument timeout:(NSUInteger)timeout{
-    if (argument == nil) {
-        return [self launchShellCommand:command atDirectory:directory arguments:nil timeout:timeout];
-    }
-    return [self launchShellCommand:command atDirectory:directory arguments:[NSArray arrayWithObject:argument ] timeout:timeout];
-}
-
--(NSString*) launchShellCommand:(NSString*)command atDirectory:(NSString*)directory arguments:(NSArray*)arguments timeout:(NSUInteger)timeout{
-    if (directory==nil) {
-        directory = @"/";
-    }
-    NSString *path = [shellCommandDict objectForKey:command];
-    if (path == nil) {
-        if ( [self shellCommandExist:command] == NO){
-            [NSException raise:@"JDCommandNotExistException" format:command,nil];
-        }
-        path = [shellCommandDict objectForKey:command];
-    }
-
-    if (arguments == nil) {
-        return [self launch:path atDirectory:directory arguments:nil timeOutLimit:timeout];
-    }
-    return [self launch:path atDirectory:directory arguments:arguments timeOutLimit:timeout];
-}
-
--(NSString*) launch:(NSString*)launchPath atDirectory:(NSString*)directoryPath arguments:(NSArray*)arguments {
-    return [self launch:launchPath atDirectory:directoryPath arguments:arguments timeOutLimit:0];
-}
-
--(NSString*) launch:(NSString*)launchPath atDirectory:(NSString*)directoryPath arguments:(NSArray*)arguments timeOutLimit:(NSUInteger)limit{
-    __block BOOL   running=YES;
-    __block NSString *retVal;
-    __block NSException *exception;
-    __block NSTask *task;
-    __block NSString *string;
-    __block NSString *string2;
-
-    NSDate *dt = [NSDate date];
++(NSInteger) launch:(NSString*)launchPath atDirectory:(NSString*)directoryPath arguments:(NSArray*)arguments stdOut:(NSString**)stdOutLog stdErr:(NSString**)stdErrLog{
+    NSTask *task;
     
-    if (limit == 0){
-        task = [[NSTask alloc] init];
-        [task setLaunchPath: launchPath];
-        
-        if ([arguments count]) {
-            [task setArguments: arguments];
-        }
-        
-        NSPipe *pipe = [NSPipe pipe];
-        NSPipe *pipe2 = [NSPipe pipe];
-        
-        [task setStandardOutput: pipe];
-        [task setStandardError:pipe2];
-        
-        NSFileHandle *file = [pipe fileHandleForReading];
-        NSFileHandle *file2 = [pipe2 fileHandleForReading];
-        
-        [task setCurrentDirectoryPath:directoryPath];
-        [task launch];
-        
+    task = [[NSTask alloc] init];
+    [task setLaunchPath: launchPath];
+    
+    if ([arguments count]) {
+        [task setArguments: arguments];
+    }
+    
+    NSPipe *pipe = [NSPipe pipe];
+    NSPipe *pipe2 = [NSPipe pipe];
+    
+    [task setStandardOutput:pipe];
+    [task setStandardError:pipe2];
+    
+    NSFileHandle *file = [pipe fileHandleForReading];
+    NSFileHandle *file2 = [pipe2 fileHandleForReading];
+    
+    [task setCurrentDirectoryPath:directoryPath];
+    [task launch];
+    [task waitUntilExit];
+    
+    if (stdOutLog) {
         NSData *data = [file readDataToEndOfFile];
-        NSString *string = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        
-        NSData *data2 = [file2 readDataToEndOfFile];
-        NSString *string2 = [[NSString alloc] initWithData:data2 encoding: NSUTF8StringEncoding];
-        
-        
-        retVal = string;
-        NSLog(@" %@ begin to terminate" , launchPath);
-        [task terminate];
-        [task waitUntilExit];
-        NSLog(@" %@ terminated" , launchPath);
-        self.lastStatusCode = [task terminationStatus];
-        
-        if (_lastStatusCode != 0) {
-            NSString *errorLog = [NSString stringWithFormat:@"%@\n=================\n%@", string, string2];
-            exception = [NSException exceptionWithName:@"JDShellStandardError" reason:errorLog userInfo:nil];
-            [exception raise];
-        }
-
-        return string;
+        *stdOutLog = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
     }
-
-    dispatch_async(dispatch_queue_create("lauunchQueue", DISPATCH_QUEUE_CONCURRENT), ^(void){
-        task = [[NSTask alloc] init];
-        [task setLaunchPath: launchPath];
-        
-        if ([arguments count]) {
-            [task setArguments: arguments];
-        }
-        
-        NSPipe *pipe = [NSPipe pipe];
-        NSPipe *pipe2 = [NSPipe pipe];
-        
-        [task setStandardOutput: pipe];
-        [task setStandardError:pipe2];
-        
-        NSFileHandle *file = [pipe fileHandleForReading];
-        NSFileHandle *file2 = [pipe2 fileHandleForReading];
-        
-        [task setCurrentDirectoryPath:directoryPath];
-        [task launch];
-        [task waitUntilExit];
-        
-        NSData *data = [file readDataToEndOfFile];
-        string = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        
-        NSData *data2 = [file2 readDataToEndOfFile];
-        string2 = [[NSString alloc] initWithData:data2 encoding: NSUTF8StringEncoding];
-        
-        retVal = string;
-        running = NO;
-    });
-    
-
-    while ([[NSDate date] timeIntervalSinceDate:dt] < (NSTimeInterval)limit) {
-        [NSThread sleepForTimeInterval:0];
-    }
-    [task terminate];
-    NSLog(@"NSTask Terminated");
-    task = nil;
-
-    self.lastStatusCode = [task terminationStatus];
-    if (_lastStatusCode != 0) {
-        NSString *errorLog = [NSString stringWithFormat:@"%@\n=================\n%@", string, string2];
-        exception = [NSException exceptionWithName:@"JDShellStandardError" reason:errorLog userInfo:nil];
-        [exception raise];
+    if (stdErrLog) {
+        NSData *data = [file2 readDataToEndOfFile];
+        *stdErrLog = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
     }
     
-
-    NSLog(@"NSTask Return");
-    NSLog(retVal,nil);
-
-    return retVal;
+    return [task terminationStatus];
 }
 
 - (void)readCompleted:(NSNotification *)notification {
