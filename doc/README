@@ -1,0 +1,10 @@
+README
+
+* graph file : .graphml, yED(http://www.yworks.com/en/products_download.php)
+* text file : .txt, .rtf
+
+* 내용은 아래를 따른다.
+파일명, content, last update date
+
+IUObj_graph.graphml : IUObj 상속 구조. last update:2014-03-11
+undomanager_구현 : undomanager 동작 방법. last update:2014-03-11 이전
