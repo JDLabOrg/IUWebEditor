@@ -357,26 +357,7 @@ function valueAdd (){
 		$('.IUTransitionView').children().css('visibility', 'visible');
 	}
 
-	$.each($('.IUTransitionView').filter('[animation = "Fly From Right Side"]'), function(index, value){
-		var secondIU = $(this).children()[1];
-		$(secondIU).css('left', $(this).css('width'));
-		$(this).hover(function(){
-			$(secondIU).animate({'left':'0px'}, 200);
-		},
-		function(){
-			$(secondIU).animate({'left':$(this).css('width')}, 200);
-		});
-	});
-	$.each($('.IUTransitionView').filter('[animation = "Overlap"]'), function(index, value){
-		var secondIU = $(this).children()[1];
-		$(secondIU).css('opacity', 0);
-		$(this).hover(function(){
-			$(secondIU).animate({'opacity':$(this).attr('targetOpacity')}, 200);
-		},
-		function(){
-            $(secondIU).animate({'opacity':0}, 200);
-		});
-	});
+
 	console.log ('!!!!!!!!!!');
 	
 });

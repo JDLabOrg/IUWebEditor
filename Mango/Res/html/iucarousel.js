@@ -72,7 +72,7 @@ $.fn.carousel = function(){
             
 			$(iu).children().filter(".IUCarouselControlBar").children().click(function(){
                                                                               var iuname = $(this).parent().parent().iuName();
-                                                                              var index = $(this).attr('c-index');
+                                                                              var index = parseInt($(this).attr('c-index'));
                                                                               document.carouselDict[iuname].clickIndex(iuname, index);
                                                                               })
         }
@@ -101,10 +101,9 @@ $(document).ready(function(){
                   
                   IUCarouselInitialize();
                   var iucarouselIUs = $('.IUCarousel').toArray();
-                  $.each(iucarouselIUs, function(i, iu){
+                  $.each(iucarouselIUs, function(index, iu){
                          var iuname = $(iu).iuName();
                          selectIUCarousel(iuname, 0);
+						 setInterval("document.carouselDict[\""+iuname+"\"].next(\""+iuname+"\");", 3500);
                          });
-                  
-                  
                   })
