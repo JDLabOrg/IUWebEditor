@@ -1051,7 +1051,6 @@
 		3DD8F886184756E50057E531 /* XG_QckHelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8F726184756E50057E531 /* XG_QckHelp.png */; };
 		3DD8F887184756E50057E531 /* XG_Toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8F727184756E50057E531 /* XG_Toolbar.png */; };
 		3DD8F888184756E50057E531 /* XG_Util_area.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8F728184756E50057E531 /* XG_Util_area.png */; };
-		3DDD27B718B756D0008536CD /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DDD27B618B756D0008536CD /* README.rtf */; };
 		3DE161B2183B17120069EF8D /* IUAssistantLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161B1183B17120069EF8D /* IUAssistantLayer.m */; };
 		3DE161BB183B6F710069EF8D /* IUPointTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161BA183B6F710069EF8D /* IUPointTextLayer.m */; };
 		3DE508BB1817A2AF00B02874 /* IUHttpLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE508BA1817A2AF00B02874 /* IUHttpLog.m */; };
@@ -5315,7 +5314,6 @@
 				3D476B3218473CC90076F767 /* grid-bigwoc.png in Resources */,
 				3D476899184739070076F767 /* button-add.png in Resources */,
 				3D47692D184739070076F767 /* setting.png in Resources */,
-				3DDD27B718B756D0008536CD /* README.rtf in Resources */,
 				3DD8F78C184756E50057E531 /* IBViewSizeInspectorOriginMidXMaxY-On.tiff in Resources */,
 				69414F5E1834B36700CF77B6 /* IUComp.png in Resources */,
 				3DB5422E1820B76B00895CE5 /* IURender.png in Resources */,
