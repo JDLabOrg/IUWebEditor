@@ -263,8 +263,10 @@
     for(int i=0; i<NumberOfIUScreentType; i++){
         NSString *key = [IUScreenFrame stringForScreenType:i];
         IUScreenFrame *temp = [self.screenFrameDict objectForKey:key];
-        NSMutableDictionary *screenDict = [temp dict];
-        [dict setObject:screenDict forKey:key];
+        if (temp.loaded){
+            NSMutableDictionary *screenDict = [temp dict];
+            [dict setObject:screenDict forKey:key];
+        }
     }
     return dict;
 }
@@ -275,16 +277,20 @@
     for(int i=0; i<NumberOfIUScreentType; i++){
         NSString *key = [IUScreenFrame stringForScreenType:i];
         IUScreenFrame *temp = [self.screenFrameDict objectForKey:key];
-        [temp loadWithDict:[dict objectForKey:key]];
         
-        if(self.iu.iuManager.pWC.project.disableMobileType
-           && i == IUScreenTypeMobile){
-            temp.loaded = false;
-        }
-        
-        if(self.iu.iuManager.pWC.project.disableTabletType
-           && i == IUScreenTypeTablet){
-            temp.loaded = false;
+        if(temp != nil){
+            [temp loadWithDict:[dict objectForKey:key]];
+            temp.loaded = YES;
+            
+            if(self.iu.iuManager.pWC.project.disableMobileType
+               && i == IUScreenTypeMobile){
+                temp.loaded = false;
+            }
+            
+            if(self.iu.iuManager.pWC.project.disableTabletType
+               && i == IUScreenTypeTablet){
+                temp.loaded = false;
+            }
         }
         
         
