@@ -291,7 +291,7 @@
 
 -(NSString *)CSSFromAttributedString{
     NSRange start = [self.htmlText rangeOfString:@"<style type=\"text/css\">"];
-    NSRange end = [self.htmlText rangeOfString:@"</style>"];
+    NSRange end = [self.htmlText rangeOfString:@"</style>" options:NSBackwardsSearch ];
     NSRange styleRange = NSMakeRange(start.location+start.length, end.location - start.location - start.length);
     return [self.htmlText substringWithRange:styleRange];
 }
@@ -365,7 +365,7 @@
 
 -(NSString *)HTMLFromAttributedString{
     NSRange start = [self.htmlText rangeOfString:@"<body>"];
-    NSRange end = [self.htmlText rangeOfString:@"</body>"];
+    NSRange end = [self.htmlText rangeOfString:@"</body>" options:NSBackwardsSearch];
     NSRange htmlRange = NSMakeRange(start.location+start.length, end.location - start.location - start.length);
     return [self.htmlText substringWithRange:htmlRange];
 }

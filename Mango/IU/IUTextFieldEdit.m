@@ -142,8 +142,10 @@
 #pragma mark CSS
 -(NSMutableDictionary*)CSSDictWithScreenType:(IUScreenType)screenType{
     NSMutableDictionary *localCSSDict = [super CSSDictWithScreenType:screenType];
-    
+
+    /*
     NSString *screenStrType = [IUScreenFrame stringForScreenType:screenType];
+
     IUScreenFrame * current = [self.iuFrame.screenFrameDict objectForKey:screenStrType];
     
     NSNumber *number= [current.extraData objectForKey:@"fontSize"];
@@ -151,7 +153,7 @@
     if (number != nil) {
         currentFontSize = [number floatValue];
     }
-
+     */
     
     NSNumber *fontSize = [[self.iuFrame screenFrame:screenType].extraData objectForKey:@"fontSize"];
     if (fontSize) {

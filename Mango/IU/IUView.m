@@ -367,7 +367,8 @@
         }
         for (IUObj *childIU in self.children) {
             if ([childIU HTMLSource2:caller]) {
-                [str appendString:[childIU HTMLSource2:caller]];
+                NSString *tempStr =[childIU HTMLSource2:caller];
+                [str appendString:tempStr];
                 [str appendString:@"\n"];
             }
         }
@@ -390,7 +391,8 @@
         
         for (IUObj *childIU in self.children) {
             if ([childIU outputHTMLSource2:self]){
-                [str appendString:[childIU outputHTMLSource2:self]];
+                NSString *tempStr =[childIU outputHTMLSource2:self];
+                [str appendString:tempStr];
                 [str appendString:@"\n"];
             }
         }

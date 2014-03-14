@@ -355,8 +355,11 @@
         [retStr appendFormat: @" %@='%@'", key, [dict objectForKey:key]];
     }
     [retStr appendString:@" >"];
-    if ([self innerHTML2:caller]) {
-        [retStr appendString:[self innerHTML2:caller]];
+    
+    NSString *innerStr = [self innerHTML2:caller];
+    if (innerStr) {
+    
+        [retStr appendString:innerStr];
     }
     if ([self appendClosingTag]) {
         [retStr appendFormat:@"  </%@>", self.HTMLTag2];
@@ -375,9 +378,11 @@
     for (NSString *key in dict) {
         [retStr appendFormat: @" %@='%@'", key, [dict objectForKey:key]];
     }
-    if (self.innerOutputHTML2) {
+    NSString *inner = self.innerOutputHTML2;
+    if (inner) {
         [retStr appendString:@" >\n  "];
-        [retStr appendString:self.innerOutputHTML2];
+        NSString *tempStr = inner;
+        [retStr appendString:tempStr];
     }
     else{
         [retStr appendString:@" >"];
@@ -757,7 +762,7 @@
     if (_draggable) {
         [self.iuManager.iuViewManager disableUpdate:self];
         
-        CGFloat percentUnitX, percentUnitY;
+        CGFloat percentUnitX, percentUnitY = 0;
         if(self.iuFrame.currentScreenFrame.percentFlagX){
             percentUnitX = [self.iuManager.iuViewManager getPercentWidth:self withX:1];
             

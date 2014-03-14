@@ -64,11 +64,11 @@
 }
 
 -(BOOL)shouldChangeHeightByUserInput:(CGFloat)h{
-    return NO;
+    return YES;
 }
 
 -(BOOL)shouldChangeWidthByUserInput:(CGFloat)w{
-    return NO;
+    return YES;
 }
 
 -(BOOL)shouldChangeFlowLayoutByUserInput:(BOOL)flowLayout{

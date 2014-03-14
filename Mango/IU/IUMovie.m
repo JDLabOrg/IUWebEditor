@@ -135,9 +135,11 @@
     
     CGImageRef halfWayImage = [generator copyCGImageAtTime:thumbTime actualTime:&actualTime error:nil];
     if(halfWayImage != NULL){
-        thumbImg=[[NSImage alloc] initWithCGImage:halfWayImage size:NSZeroSize];
-
+        thumbImg =[[NSImage alloc] initWithCGImage:halfWayImage size:NSZeroSize];
+        CGImageRelease(halfWayImage);
     }
+    
+    
     
     return thumbImg;
 
