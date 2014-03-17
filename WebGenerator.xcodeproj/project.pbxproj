@@ -1053,6 +1053,7 @@
 		3DD8F888184756E50057E531 /* XG_Util_area.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8F728184756E50057E531 /* XG_Util_area.png */; };
 		3DE161B2183B17120069EF8D /* IUAssistantLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161B1183B17120069EF8D /* IUAssistantLayer.m */; };
 		3DE161BB183B6F710069EF8D /* IUPointTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE161BA183B6F710069EF8D /* IUPointTextLayer.m */; };
+		3DE224D518D70A1200190847 /* iustyle.js in Sources */ = {isa = PBXBuildFile; fileRef = 3DE224D418D70A1200190847 /* iustyle.js */; };
 		3DE508BB1817A2AF00B02874 /* IUHttpLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE508BA1817A2AF00B02874 /* IUHttpLog.m */; };
 		3DE508C81817B51D00B02874 /* IUProjectCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE508C61817B51D00B02874 /* IUProjectCollectionViewItem.xib */; };
 		3DECD59C18588758008D1229 /* IUInspectorCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DECD59A18588758008D1229 /* IUInspectorCellVC.m */; };
@@ -2345,6 +2346,7 @@
 		3DE161B1183B17120069EF8D /* IUAssistantLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUAssistantLayer.m; path = IUCanvasView/IUAssistantLayer.m; sourceTree = "<group>"; };
 		3DE161B9183B6F710069EF8D /* IUPointTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUPointTextLayer.h; path = IUCanvasView/IUPointTextLayer.h; sourceTree = "<group>"; };
 		3DE161BA183B6F710069EF8D /* IUPointTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUPointTextLayer.m; path = IUCanvasView/IUPointTextLayer.m; sourceTree = "<group>"; };
+		3DE224D418D70A1200190847 /* iustyle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iustyle.js; sourceTree = "<group>"; };
 		3DE508B91817A2AF00B02874 /* IUHttpLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUHttpLog.h; path = Mango/IUlib/IUHttpLog.h; sourceTree = "<group>"; };
 		3DE508BA1817A2AF00B02874 /* IUHttpLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUHttpLog.m; path = Mango/IUlib/IUHttpLog.m; sourceTree = "<group>"; };
 		3DE508C61817B51D00B02874 /* IUProjectCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IUProjectCollectionViewItem.xib; path = CollectionView/IUProjectCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -3809,6 +3811,7 @@
 				690EB9DB1835B43400FB31FA /* iuframe.js */,
 				690EB9DE183632B500FB31FA /* comp.html */,
 				69006649188CEB7400A9A6F3 /* iulib.js */,
+				3DE224D418D70A1200190847 /* iustyle.js */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -5876,6 +5879,7 @@
 				69C25392188954F80030A6F9 /* MGToolbarDelegate.m in Sources */,
 				69A81868177F209D00600909 /* MGNewFileVC.m in Sources */,
 				3D90B4C2185087BA00822A67 /* NSMenu_JDExtension.m in Sources */,
+				3DE224D518D70A1200190847 /* iustyle.js in Sources */,
 				69A8186A177F209D00600909 /* MGNewFileWC.m in Sources */,
 				69A819C5177F209D00600909 /* MGInspectorVC.m in Sources */,
 				69D513411833A29B004B1E7B /* IUResponsiveSection.m in Sources */,
